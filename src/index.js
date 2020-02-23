@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Root from "./Components/Root/Root";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-serviceWorker.unregister();
+ReactDOM.render(<Root />, document.getElementById("root"));
