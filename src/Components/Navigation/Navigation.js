@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import DropdownList from "../Navigation/Dropdown";
 import { Dropdown, Icon } from "antd";
-import "antd/dist/antd.css";
+import { NavLink } from "react-router-dom";
+
+import DropdownList from "../Navigation/Dropdown";
 
 const Navigation = () => (
   <ul>
@@ -14,13 +14,9 @@ const Navigation = () => (
     <li>
       <NavLink to="/catalog">
         <Dropdown overlay={DropdownList}>
-          <a
-            className="ant-dropdown-link"
-            href="#"
-            onClick={e => e.preventDefault()}
-          >
+          <p>
             Каталог <Icon type="down" />
-          </a>
+          </p>
         </Dropdown>
       </NavLink>
     </li>

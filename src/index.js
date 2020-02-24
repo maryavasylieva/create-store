@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Root from "./Components/Root/Root";
 import {BrowserRouter, Route} from 'react-router-dom';
+import "antd/dist/antd.css";
+
+import Root from "./Components/Root/Root";
 
 
 ReactDOM.render(

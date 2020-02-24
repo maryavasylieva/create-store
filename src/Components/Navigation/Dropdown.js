@@ -1,25 +1,19 @@
 import React from "react";
 import { Menu } from "antd";
-import "antd/dist/antd.css";
+
+import { NavLink } from "react-router-dom";
+import { dropdownRoutes } from "../routes";
 
 const DropdownList = () => (
   <Menu>
-    <Menu.Item>
-      <a target="_blank" href="#">
-        Кисти
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" href="#">
-        Краски
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" href="#">
-        Холсты
-      </a>
-    </Menu.Item>
+      {dropdownRoutes.map(route => <Menu.Item key={route.path}>
+        <NavLink to={route.path}>
+            {route.name}
+        </NavLink>
+      </Menu.Item>)}
   </Menu>
 );
+
+
 
 export default DropdownList;
