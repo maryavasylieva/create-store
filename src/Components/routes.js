@@ -5,6 +5,8 @@ const PaintsPages = lazy(() => import("../Pages/Paints"));
 const CanvasPages = lazy(() => import("../Pages/Canvas"));
 const Catalog = lazy(() => import("../Pages/Catalog"));
 const Home = lazy(() => import("../Pages/Home"));
+const Auth = lazy(() => import("../Pages/Auth"));
+const PersonalCard = lazy(() => import("../Pages/PersonalCard"));
 
 export const dropdownRoutes = [
   {
@@ -30,6 +32,16 @@ export const routes = [
     path: "/catalog",
     component: Catalog,
     name: "Каталог"
+  },
+  {
+    path: "/auth",
+    component: Auth,
+    name: "Auth"
+  },
+  {
+    path: "/personalCard",
+    component: PersonalCard,
+    name: "PersonalCard"
   },
   {
     path: "/",
