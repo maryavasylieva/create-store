@@ -1,14 +1,17 @@
 import React from "react";
-import { Dropdown, Icon } from "antd";
+import { Dropdown } from "antd";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { MenuOutlined, DownOutlined  } from "@ant-design/icons";
+import Media from "react-media";
+
 import { ReactComponent as Loupe } from "../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../assets/icon/002-love-and-romance.svg";
 import { ReactComponent as Cart } from "../../assets/icon/001-shopping-cart.svg";
 import Logo from "../../assets/img/ArtistShopLogo.png";
-
 import DropdownList from "../Navigation/Dropdown";
 import css from "../Navigation/Navigation.module.css";
+import BurgerMenu from "../Navigation/BurgerMenu/BurgerMenu";
 
 const Navigation = () => {
   // const [isOpen, open] = useState(false);
@@ -27,7 +30,7 @@ const Navigation = () => {
           <NavLink to="/catalog" className={css.link}>
             <Dropdown overlay={DropdownList}>
               <TextDrop>
-                Каталог <Icon type="down" />
+                Каталог <DownOutlined />
               </TextDrop>
             </Dropdown>
           </NavLink>
@@ -130,3 +133,32 @@ const CartSvg = styled(Cart)`
 `;
 
 export default Navigation;
+
+{
+  /* <NavList>
+        <NavElem>
+          <NavLink to="/" exact className={css.link}>
+            Главная
+          </NavLink>
+        </NavElem>
+        <NavElem>
+          <NavLink to="/catalog" className={css.link}>
+            <Dropdown overlay={DropdownList}>
+              <TextDrop>
+                Каталог <Icon type="down" />
+              </TextDrop>
+            </Dropdown>
+          </NavLink>
+        </NavElem>
+        <NavElem>
+          <NavLink to="/about" className={css.link}>
+            Про нас
+          </NavLink>
+        </NavElem>
+        <NavElem>
+          <NavLink to="/contact" className={css.link}>
+            Контакты
+          </NavLink>
+        </NavElem>
+      </NavList> */
+}

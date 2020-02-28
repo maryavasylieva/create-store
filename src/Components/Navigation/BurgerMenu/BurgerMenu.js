@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Dropdown, Icon } from "antd";
+import { Dropdown} from "antd";
+import {DownOutlined} from '@ant-design/icons'
 import styled from "styled-components";
 
-import css from "../Navigation/Navigation.module.css";
+import css from "../Navigation.module.css";
 import DropdownList from "../Dropdown";
 
 const BurgerMenu = ( ) => {
@@ -18,7 +19,7 @@ const BurgerMenu = ( ) => {
             <NavLink to="/catalog" className={css.link}>
               <Dropdown overlay={DropdownList}>
                 <TextDrop>
-                  Каталог <Icon type="down" />
+                  Каталог <DownOutlined />
                 </TextDrop>
               </Dropdown>
             </NavLink>
