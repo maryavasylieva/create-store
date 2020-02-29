@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { routes } from "./Components/routes";
 // import Navigation from "./Components/Navigation/Navigation";
 import NavHeader from "./Components/NavHeader/NavHeader"
-import Navigation from "./Components/Navigation/Nav"
+import Navigation from "./Components/Navigation/Navigation"
 
 const App = () => {
   return (
