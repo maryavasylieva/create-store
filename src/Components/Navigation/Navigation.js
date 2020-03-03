@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Dropdown } from "antd";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { MenuOutlined, DownOutlined } from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import Media from "react-media";
 import { MenuRounded, CloseRounded } from "@material-ui/icons";
 import { CSSTransition } from "react-transition-group";
@@ -16,6 +16,7 @@ import Logo from "../../assets/img/ArtistShopLogo.png";
 import DropdownList from "../Navigation/Dropdown";
 import css from "../Navigation/Navigation.module.css";
 import BurgerMenu from "../Navigation/BurgerMenu/BurgerMenu";
+import "./stylesheet/styleAnimation.css";
 
 const Navigation = () => {
   const [isOpen, open] = useState(false);
@@ -36,21 +37,20 @@ const Navigation = () => {
             <>
               {matches.small &&
                 (isOpen ? (
-                  <CSSTransition
-                    in={isOpen}
-                    timeout={200}
-                    classNames="fade"
-                    unmountOnExit
-                  >
-                    <div className="dropdown">
-                      <BurgerMenu />
+                  <>
+                    <CloseRounded onClick={() => open(false)} />
+                    <div>
+                      <CSSTransition
+                        in={isOpen}
+                        timeout={300}
+                        classNames="alert"
+                        unmountOnExit
+                      >
+                        <BurgerMenu />
+                      </CSSTransition>
                     </div>
-                  </CSSTransition>
+                  </>
                 ) : (
-                  // <div>
-                  //   <BurgerMenu />
-                  //   <CloseRounded  onClick={()=> open(false)} />
-                  // </div>
                   <MenuRounded onClick={() => open(true)} />
                 ))}
               {matches.medium &&

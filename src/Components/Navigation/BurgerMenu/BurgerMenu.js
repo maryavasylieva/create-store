@@ -7,7 +7,6 @@ import styled from "styled-components";
 import css from "../Navigation.module.css";
 import DropdownList from "../Dropdown";
 
-
 const BurgerMenu = () => {
   return (
       <BurgerList>
@@ -50,17 +49,20 @@ const BurgerList = styled.ul`
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: 300px;
   z-index: 9;
+  margin: 0 auto;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
   @media screen and (min-width: 768px) {
-
-
   }
 `;
 
 const BurgerItem = styled.li`
   padding: 20px 15px;
   text-transform: uppercase;
+  /* text-align: center; */
 `;
+
 
 export default BurgerMenu;
