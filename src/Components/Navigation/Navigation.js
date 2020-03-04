@@ -37,22 +37,19 @@ const Navigation = () => {
             <>
               {matches.small &&
                 (isOpen ? (
-                  <>
-                    <CloseRounded onClick={() => open(false)} />
-                    <div>
-                      <CSSTransition
-                        in={isOpen}
-                        timeout={300}
-                        classNames="alert"
-                        unmountOnExit
-                      >
-                        <BurgerMenu />
-                      </CSSTransition>
-                    </div>
-                  </>
-                ) : (
                   <MenuRounded onClick={() => open(true)} />
-                ))}
+                ) : (
+                  <CloseRounded onClick={() => open(false)} />
+                ))
+                <CSSTransition
+                in={isOpen}
+                timeout={300}
+                classNames="alert"
+                unmountOnExit
+              >
+                <BurgerMenu />
+              </CSSTransition>
+                }
               {matches.medium &&
                 (isOpen ? (
                   <div>
