@@ -1,27 +1,28 @@
 import { lazy } from "react";
 //TODO: set webpack chunk name to async components
-const BrushesPages = lazy(() => import("../Pages/Brushes"));
-const PaintsPages = lazy(() => import("../Pages/Paints"));
-const CanvasPages = lazy(() => import("../Pages/Canvas"));
-const Catalog = lazy(() => import("../Pages/Catalog"));
-const Home = lazy(() => import("../Pages/Home"));
-const Auth = lazy(() => import("../Pages/Auth"));
-const PersonalCard = lazy(() => import("../Pages/PersonalCard"));
+const AsyncBrushesPages = lazy(() => import("../Pages/Brushes"));
+const AsyncPaintsPages = lazy(() => import("../Pages/Paints"));
+const AsyncCanvasPages = lazy(() => import("../Pages/Canvas"));
+const AsyncCatalog = lazy(() => import("../Pages/Catalog"));
+const AsyncHome = lazy(() => import("../Pages/Home"));
+const AsyncLogin = lazy(() => import("../Pages/LogIn"));
+const AsyncRegistration = lazy(() => import("../Pages/Registration"));
+const AsyncPersonalCard = lazy(() => import("../Pages/PersonalCard"));
 
 export const dropdownRoutes = [
   {
     path: "/catalog/brushes",
-    component: BrushesPages,
+    component: AsyncBrushesPages,
     name: "Кисти"
   },
   {
     path: "/catalog/paints",
-    component: PaintsPages,
+    component: AsyncPaintsPages,
     name: "Краски"
   },
   {
     path: "/catalog/canvas",
-    component: CanvasPages,
+    component: AsyncCanvasPages,
     name: "Холсты"
   }
 ];
@@ -30,22 +31,27 @@ export const routes = [
   ...dropdownRoutes,
   {
     path: "/catalog",
-    component: Catalog,
+    component: AsyncCatalog,
     name: "Каталог"
   },
   {
-    path: "/auth",
-    component: Auth,
-    name: "Auth"
+    path: "/login",
+    component: AsyncLogin,
+    name: "Login"
+  },
+  {
+    path: "/registration",
+    component: AsyncRegistration,
+    name: "Registration"
   },
   {
     path: "/personalCard",
-    component: PersonalCard,
+    component: AsyncPersonalCard,
     name: "PersonalCard"
   },
   {
     path: "/",
-    component: Home,
+    component: AsyncHome,
     name: ""
   }
 ];

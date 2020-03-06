@@ -1,36 +1,63 @@
+/* .move-enter {
+  opacity: 0.01;
+  transform: translate(-40px, 0)
+}
 
-/* .fade-enter {
-    opacity: 0;
-  }
+.move-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 500ms ease-in;
+}
 
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
-  }
+.move-exit {
+  opacity: 1;
+  transform: translate(0, 0)
+}
 
-  .fade-exit {
-    opacity: 1;
-  }
+.move-exit-active {
+  opacity: 0.01;
+  transform: translate(40px, 0);
+  transition: all 500ms ease-in;
+} */
 
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-  } */
+/* .dialog-enter {
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition: 0.3s linear;
+}
 
-  .alert-enter {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  .alert-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
-  }
-  .alert-exit {
-    opacity: 1;
-  }
-  .alert-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
-  }
+.dialog-enter-active {
+  opacity: 1;
+  transition: 0.3s linear;
+}
+
+.dialog-exit {
+  opacity: 0;
+}
+
+.dialog-exit-active {
+  transform: rotateX(0deg);
+  visibility: visible;
+  opacity: 1;
+} */
+
+.fade-enter {
+  opacity    : 0;
+  transition : opacity .7s ease-in;
+}
+
+.fade-enter-active {
+  opacity: 1;
+
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: all 200ms ease;
+}
