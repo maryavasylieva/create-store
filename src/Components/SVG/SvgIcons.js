@@ -1,7 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
-
-
+import styled from "styled-components";
 
 import { ReactComponent as Loupe } from "../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../assets/icon/002-love-and-romance.svg";
@@ -23,6 +21,7 @@ const LoupeSvg = styled(Loupe)`
   height: 20px;
   /* margin-top: 20px; */
   margin-right: 10px;
+  cursor: pointer;
   &:hover {
     fill: blue;
     transition: all 300ms ease-in-out;
@@ -35,6 +34,7 @@ const LikeHeartSvg = styled(LikeHeart)`
   height: 20px;
   /* margin-top: 20px; */
   margin-right: 10px;
+  cursor: pointer;
   &:hover {
     fill: blue;
     transition: all 300ms ease-in-out;
@@ -47,6 +47,7 @@ const CartSvg = styled(Cart)`
   height: 20px;
   /* margin-top: 20px; */
   margin-right: 10px;
+  cursor: pointer;
   &:hover {
     fill: blue;
     transition: all 300ms ease-in-out;

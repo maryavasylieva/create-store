@@ -5,7 +5,7 @@ import { DownOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
 import css from "../Navigation.module.css";
-import DropdownList from "../Dropdown";
+import DropdownList from "../Dropdown/Dropdown";
 
 const BurgerMenu = () => {
   return (
@@ -44,17 +44,20 @@ const TextDrop = styled.p`
 
 const BurgerList = styled.ul`
   list-style-type: none;
-  background-color: beige;
+  background-color: white;
   display: block;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   width: 300px;
-  z-index: 9;
+  z-index: 100;
   margin: 0 auto;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  /* box-shadow: 0 16px 6px 2px rgba(0, 0, 0, 0.14); */
   @media screen and (min-width: 768px) {
+    background-color: beige;
+    left: 15px;
+    width: 600px;
   }
 `;
 
