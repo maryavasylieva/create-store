@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.0.0",
+    "formik": "^2.1.4",
     "materialize-css": "^1.0.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
@@ -17,7 +18,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

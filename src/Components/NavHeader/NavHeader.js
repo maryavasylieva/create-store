@@ -14,7 +14,7 @@ const NavHeader = () => {
 
         <HeadRight>
           <HeadText to="/personalCard">Карта лояльности</HeadText>
-          <HeadText to="/auth">Войти</HeadText>
+          <HeadText to="/login">Войти</HeadText>
         </HeadRight>
       </HeadContainer>
   );

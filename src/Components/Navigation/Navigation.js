@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import SvgIcon from "../SVG/SvgIcons";
 import Logo from "../../assets/img/ArtistShopLogo.png";
 import BurgerMenu from "../Navigation/BurgerMenu/BurgerMenu";
-import "./stylesheet/styleAnimation.css";
+import "../../stylesheet/styleAnimation.css";
 import NavigationList from "./NavigationList/NavigationList"
 
 const Navigation = () => {

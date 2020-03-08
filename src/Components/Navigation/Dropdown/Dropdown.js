@@ -23,7 +23,7 @@ const MenuDropdown = styled(Menu)`
 const Item = styled(Menu.Item)`
   padding: 10px;
   &:hover {
-    background-color: #EDEAEA ;
+    background-color: ${({theme}) => theme.colors.hoverDropdown};
   }
 `;
 export default DropdownList;
