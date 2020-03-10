@@ -8,6 +8,7 @@ const AsyncHome = lazy(() => import("../Pages/Home"));
 const AsyncLogin = lazy(() => import("../Pages/LogIn"));
 const AsyncRegistration = lazy(() => import("../Pages/Registration"));
 const AsyncPersonalCard = lazy(() => import("../Pages/PersonalCard"));
+const AsyncArtReproduct = lazy(() => import("../Pages/ArtReproductions"))
 
 export const dropdownRoutes = [
   {
@@ -24,6 +25,11 @@ export const dropdownRoutes = [
     path: "/catalog/canvas",
     component: AsyncCanvasPages,
     name: "Холсты"
+  },
+  {
+    path: "/catalog/artreproductions",
+    component: AsyncArtReproduct,
+    name: "Репродукции картин"
   }
 ];
 
