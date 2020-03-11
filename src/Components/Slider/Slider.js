@@ -1,14 +1,12 @@
 /**@jsx jsx */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { css, jsx } from "@emotion/core";
-
 
 import SliderContent from "./SliderContent";
 import Slide from "./Slide";
 import Arrow from "./Arrow";
-import Dots from './Dots'
-
+import Dots from "./Dots";
 
 const Slider = props => {
   const getWidth = () => window.innerWidth;
@@ -21,12 +19,27 @@ const Slider = props => {
 
   const { translate, transition, activeIndex } = state;
 
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+      autoPlayRef.current = nextSlide;
+  })
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+
+    const interval = setInterval(play, props.autoPlay * 1000);
+    return () => clearInterval(interval)
+  }, []);
+
   const nextSlide = () => {
     if (activeIndex === props.slides.length - 1) {
       return setState({
         ...state,
         translate: 0,
-        transition: 0
+        activeIndex: 0
       });
     }
 
@@ -78,7 +91,7 @@ const SliderCSS = css`
   height: 500px;
   width: 100%;
   margin: 0 auto;
-  overflow:  hidden;
+  overflow: hidden;
 `;
 
 export default Slider;

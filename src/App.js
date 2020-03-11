@@ -15,7 +15,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <NavHeader />
       <Navigation />
-      <Slider slides={images}/>
+      <Slider slides={images} autoPlay={2}/>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           {routes.map(route => (

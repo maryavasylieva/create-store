@@ -1,6 +1,6 @@
 const colors = {
-  hoverDropdown: "#EDEAEA",
-  backgroundDropdown: "#ffffff"
+  mainColor: "#EDEAEA",
+  white: "#ffffff"
 };
 
 const fonts = {
