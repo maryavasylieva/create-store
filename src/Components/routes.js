@@ -13,6 +13,8 @@ const AsyncArtists = lazy(() => import("../Pages/Artists"));
 const AsyncDesigners = lazy(() => import("../Pages/Designers"));
 const AsyncAboutUs = lazy(() => import("../Pages/AboutUs"));
 const AsyncContacts = lazy(() => import("../Pages/Contacts"));
+const AsyncGraphicsPages = lazy(() =>import ("../Pages/Graphics.js"));
+const AsyncPaperPages  = lazy(() => import("../Pages/Paper.js"));
 
 export const dropdownRoutes = [
   {
@@ -31,10 +33,20 @@ export const dropdownRoutes = [
     name: "Холсты"
   },
   {
+    path: "/catalog/paper",
+    component: AsyncPaperPages,
+    name: "Бумага"
+  },
+  {
+    path: "/catalog/graphics",
+    component: AsyncGraphicsPages,
+    name: "Графика"
+  },
+  {
     path: "/catalog/artreproductions",
     component: AsyncArtReproduct,
     name: "Репродукции картин"
-  }
+  },
 ];
 
 export const routes = [

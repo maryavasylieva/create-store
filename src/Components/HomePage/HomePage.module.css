@@ -1,0 +1,13 @@
+.section {
+    position: relative;
+}
+
+.delivery::before {
+    display: inline-block;
+    width: 32px;
+    height: 31px;
+    content: "";
+    background-image: url(../../assets/icon/001-shopping-cart.svg);
+    position: absolute;
+    left: -60px;
+}
