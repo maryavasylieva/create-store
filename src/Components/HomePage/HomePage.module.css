@@ -1,13 +1,70 @@
-.section {
+
+.section li {
+    list-style-type: none;
+    text-decoration: none;
+    width: 210px;
+}
+
+.list {
     position: relative;
 }
 
+
 .delivery::before {
     display: inline-block;
-    width: 32px;
-    height: 31px;
+    width: 52px;
+    height: 51px;
     content: "";
-    background-image: url(../../assets/icon/001-shopping-cart.svg);
+    background-image: url(../../assets/icon/003-truck.svg);
     position: absolute;
-    left: -60px;
+    left: -76px;
+    right: 50%;
 }
+
+
+.avaliability::before {
+    display: inline-block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url(../../assets/icon/shop.svg);
+    position: absolute;
+    left: -76px;
+    right: 50%;
+}
+
+
+.product::before {
+    display: inline-block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url(../../assets/icon/001-send.svg);
+    position: absolute;
+    left: -76px;
+    right: 50%;
+}
+
+.provider::before {
+    display: inline-block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url(../../assets/icon/001-group.svg);
+    position: absolute;
+    left: -76px;
+    right: 50%;
+}
+
+
+@media screen and (min-width: 768px) {
+    .section{
+    padding-top: 30px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    }
+  }
