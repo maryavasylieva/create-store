@@ -6,13 +6,13 @@ import css from "./HomePage.module.css";
 const Advantages = () => {
   return (
     <Section className={css.section}>
-      <div className={css.delivery}>
+      <Delivery>
         <SubTitle>Доставка по всей Украине и миру</SubTitle>
         <MainText>
           Вы можете посмотреть возможные способы и стоимость доставки в вашем
           городе или в вашей стране
         </MainText>
-      </div>
+      </Delivery>
       <Availability>
         <SubTitle>Уточнить наличие</SubTitle>
         <MainText>
@@ -68,8 +68,8 @@ const Delivery = styled.div`
   width: 210px;
   &:before {
     display: block;
-    width: 32px;
-    height: 31px;
+    width: 52px;
+    height: 51px;
     content: "";
     background-image: url("../../assets/icon/truck.svg");
     position: absolute;
@@ -80,13 +80,43 @@ const Delivery = styled.div`
 
 const Availability = styled.div`
   width: 210px;
+  &:before {
+    display: block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url("../../assets/icon/bars.svg");
+    position: absolute;
+    left: 0px;
+    right: 50%;
+  }
 `;
 
 const Product = styled.div`
   width: 210px;
+  &:before {
+    display: block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url("../../assets/icon/sent.svg");
+    position: absolute;
+    left: 0px;
+    right: 50%;
+  }
 `;
 
 const Provider = styled.div`
   width: 210px;
+  &:before {
+    display: block;
+    width: 52px;
+    height: 51px;
+    content: "";
+    background-image: url("../../assets/icon/sketch.svg");
+    position: absolute;
+    left: 0px;
+    right: 50%;
+  }
 `;
 export default Advantages;
