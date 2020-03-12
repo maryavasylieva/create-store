@@ -4,8 +4,8 @@ const colors = {
 };
 
 const fonts = {
-  mainText: "Noto Sans",
-  navText: "Montserrat"
+  notoSans: "Noto Sans",
+  montserrat: "Montserrat"
 };
 
 const theme = {

@@ -28,7 +28,7 @@ const HeadContainer = styled.div`
     justify-content: space-around;
     background-color: #edeaea;
     margin-bottom: 10px;
-    width: 100%;
+    max-width: 100%;
  }
 
   /* TODO: set hardcoded color to the variable */

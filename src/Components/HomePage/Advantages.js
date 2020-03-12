@@ -19,7 +19,7 @@ const Advantages = () => {
           <div className={css.avaliability}>
         <SubTitle>Уточнить наличие</SubTitle>
         <MainText>
-          На нашем сайте вы всегда можете посмотреть нличие товара в магазинах
+          На нашем сайте вы всегда можете посмотреть наличие товара в магазинах
         </MainText>
         </div>
       </li>
@@ -35,7 +35,7 @@ const Advantages = () => {
       <li className = {css.list}>
           <div className={css.provider}>
         <SubTitle>Юридическим лицам</SubTitle>
-        <MainText>Мы зарегестрированы на портале поставщиков</MainText>
+        <MainText>Мы зарегистрированы на портале поставщиков</MainText>
         </div>
       </li>
     </ul>
@@ -56,7 +56,7 @@ const Advantages = () => {
 // `;
 
 const SubTitle = styled.h4`
-  font-family: "Montserrat", sans-serif;
+  font-family: ${({theme}) => theme.fonts.montserrat}
   font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
@@ -65,7 +65,7 @@ const SubTitle = styled.h4`
 `;
 
 const MainText = styled.p`
-  font-family: "Roboto", sans-serif;
+  font-family: ${({theme}) => theme.fonts.notoSans}
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;

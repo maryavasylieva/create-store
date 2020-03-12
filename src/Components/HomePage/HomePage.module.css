@@ -1,4 +1,12 @@
+.section {
+    width: 320px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
 
+
+}
 .section li {
     list-style-type: none;
     text-decoration: none;
@@ -58,13 +66,14 @@
 
 
 @media screen and (min-width: 768px) {
+
     .section{
     padding-top: 30px;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    flex-direction: row;
+    align-items: baseline;
     justify-content: space-evenly;
     }
   }
