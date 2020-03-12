@@ -2,16 +2,29 @@ import React, { useState } from "react";
 import Media from "react-media";
 import { MenuRounded, CloseRounded } from "@material-ui/icons";
 import { CSSTransition } from "react-transition-group";
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import SvgIcon from "../SVG/SvgIcons";
+import SvgIcon from "./SVG/SvgIcons";
 import Logo from "../../assets/img/ArtistShopLogo.png";
 import BurgerMenu from "../Navigation/BurgerMenu/BurgerMenu";
 import "../../stylesheet/styleAnimation.css";
-import NavigationList from "./NavigationList/NavigationList"
+import NavigationList from "./NavigationList/NavigationList";
 
 const Navigation = () => {
-  const [isOpen, open] = useState(false);
+  const [state, setState] = useState({
+    isOpen: false
+  });
+
+  const { isOpen } = state;
+
+  const handleClickOpen = () => {
+    setState({ ...state, isOpen: true });
+  };
+
+  const handleClickClose = () => {
+    setState({ ...state, isOpen: false });
+  };
+
   return (
     <Nav>
       <div>
@@ -30,9 +43,9 @@ const Navigation = () => {
               {matches.small && (
                 <>
                   {isOpen ? (
-                    <CloseRounded onClick={() => open(false)} />
+                    <CloseRounded onClick={handleClickClose} />
                   ) : (
-                    <MenuRounded onClick={() => open(true)} />
+                    <MenuRounded onClick={handleClickOpen} />
                   )}
                   <CSSTransition
                     in={isOpen}
@@ -49,10 +62,13 @@ const Navigation = () => {
                   {isOpen ? (
                     <CloseRounded
                       fontSize="large"
-                      onClick={() => open(false)}
+                      onClick={handleClickClose}
                     />
                   ) : (
-                    <MenuRounded fontSize="large" onClick={() => open(true)} />
+                    <MenuRounded
+                      fontSize="large"
+                      onClick={handleClickOpen}
+                    />
                   )}
                   <CSSTransition
                     in={isOpen}
@@ -64,9 +80,7 @@ const Navigation = () => {
                   </CSSTransition>
                 </>
               )}
-              {matches.large && (
-                <NavigationList/>
-              )}
+              {matches.large && <NavigationList />}
             </>
           )}
         </Media>

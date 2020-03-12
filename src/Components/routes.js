@@ -8,7 +8,11 @@ const AsyncHome = lazy(() => import("../Pages/Home"));
 const AsyncLogin = lazy(() => import("../Pages/LogIn"));
 const AsyncRegistration = lazy(() => import("../Pages/Registration"));
 const AsyncPersonalCard = lazy(() => import("../Pages/PersonalCard"));
-const AsyncArtReproduct = lazy(() => import("../Pages/ArtReproductions"))
+const AsyncArtReproduct = lazy(() => import("../Pages/ArtReproductions"));
+const AsyncArtists = lazy(() => import("../Pages/Artists"));
+const AsyncDesigners = lazy(() => import("../Pages/Designers"));
+const AsyncAboutUs = lazy(() => import("../Pages/AboutUs"));
+const AsyncContacts = lazy(() => import("../Pages/Contacts"));
 
 export const dropdownRoutes = [
   {
@@ -39,6 +43,26 @@ export const routes = [
     path: "/catalog",
     component: AsyncCatalog,
     name: "Каталог"
+  },
+  {
+    path: "/artists",
+    component: AsyncArtists,
+    name: "Художникам"
+  },
+  {
+    path: "/designers",
+    component: AsyncDesigners,
+    name: "Дизайнерам"
+  },
+  {
+    path: "/aboutus",
+    component: AsyncAboutUs,
+    name: "Про нас"
+  },
+  {
+    path: "/contacts",
+    component: AsyncContacts,
+    name: "Контакты"
   },
   {
     path: "/login",

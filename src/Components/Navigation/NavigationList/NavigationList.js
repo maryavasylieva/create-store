@@ -8,6 +8,7 @@ import DropdownList from "../Dropdown/Dropdown";
 import css from "../Navigation.module.css";
 
 const NavigationList = () => {
+
   return (
     <NavList>
       <NavElem>
@@ -25,12 +26,22 @@ const NavigationList = () => {
         </NavLink>
       </NavElem>
       <NavElem>
-        <NavLink to="/about" className={css.link}>
+        <NavLink to="/artists" className={css.link}>
+          Художникам
+        </NavLink>
+      </NavElem>
+      <NavElem>
+        <NavLink to="/designers" className={css.link}>
+         Дизайнерам
+        </NavLink>
+      </NavElem>
+      <NavElem>
+        <NavLink to="/aboutus" className={css.link}>
           Про нас
         </NavLink>
       </NavElem>
       <NavElem>
-        <NavLink to="/contact" className={css.link}>
+        <NavLink to="/contacts" className={css.link}>
           Контакты
         </NavLink>
       </NavElem>

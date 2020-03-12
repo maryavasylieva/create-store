@@ -7,7 +7,7 @@ const Slide  = ({content}) => {
     return(
         <div
         css={css`
-        height: 100;
+        height: 100%;
         width: 100%;
         background-image: url('${content}');
         background-size: cover;

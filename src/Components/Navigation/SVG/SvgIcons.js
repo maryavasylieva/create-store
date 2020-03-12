@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 
 
-import { ReactComponent as Loupe } from "../../assets/icon/003-loupe.svg";
-import { ReactComponent as LikeHeart } from "../../assets/icon/002-love-and-romance.svg";
-import { ReactComponent as Cart } from "../../assets/icon/001-shopping-cart.svg";
+import { ReactComponent as Loupe } from "../../../assets/icon/003-loupe.svg";
+import { ReactComponent as LikeHeart } from "../../../assets/icon/002-love-and-romance.svg";
+import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
 const SvgIcon = () => {
   return (
