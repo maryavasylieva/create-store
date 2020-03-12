@@ -72,7 +72,10 @@ const NavElem = styled.li`
   font-size: 13px;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  margin-right: 20px;
+  &:not(:last-child ){
+    margin-right: 20px;
+
+  }
 `;
 
 export default NavigationList;

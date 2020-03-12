@@ -1,16 +1,16 @@
-import React from "react";
-import styled from 'styled-components';
-
-
+import React, { useState } from "react";
+import styled from "styled-components";
 
 import { ReactComponent as Loupe } from "../../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../../assets/icon/002-love-and-romance.svg";
 import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
+import SearchFrom from "../../SearchForm/SearchForm";
 
 const SvgIcon = () => {
+  const [isOpen, open] = useState(false);
   return (
     <>
-      <LoupeSvg />
+      {isOpen ? <SearchFrom /> : <LoupeSvg onClick={() => open(true)} /> }
       <LikeHeartSvg />
       <CartSvg />
     </>
