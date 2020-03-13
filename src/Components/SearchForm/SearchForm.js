@@ -33,7 +33,7 @@ const Form = styled.form`
   width: 150px;
   position: absolute;
   right: 50%;
-  top: -4px;
+  top: -15px;
   /* max-width: 200px; */
   /* margin-left: auto; */
   /* margin-right: auto; */
@@ -50,6 +50,7 @@ const Input = styled.input`
   font-size: 10px;
   font-style: italic;
   outline: none;
+  margin-right: 10px;
 `;
 
 export default SearchForm;

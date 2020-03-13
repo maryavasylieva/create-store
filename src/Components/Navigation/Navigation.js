@@ -93,11 +93,11 @@ const Navigation = () => {
 };
 
 const Nav = styled.div`
-  max-width: 100%;
+  max-width: 90%;
   position: relative;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-around;
 `;
 
@@ -115,6 +115,7 @@ const LogoImg = styled.img`
 
 const NavSvgContainer = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export default Navigation;

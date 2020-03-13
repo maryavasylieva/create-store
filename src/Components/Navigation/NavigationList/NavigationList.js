@@ -71,7 +71,7 @@ const NavElem = styled.li`
   padding: 40px 0px 40px 0px;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: ${({theme}) => theme.fonts.montserrat};
   &:not(:last-child ){
     margin-right: 20px;
 
