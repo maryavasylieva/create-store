@@ -34,8 +34,8 @@ const Navigation = () => {
         <Media
           queries={{
             small: "(max-width: 599px)",
-            medium: "(min-width: 600px) and (max-width: 1023px)",
-            large: "(min-width: 1024px)"
+            medium: "(min-width: 600px) and (max-width: 1192px)",
+            large: "(min-width: 1200px)"
           }}
         >
           {matches => (
