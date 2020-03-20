@@ -2,6 +2,7 @@ const colors = {
   mainColor: "#EDEAEA",
   white: "#ffffff",
   lightGrey: "#BDBDBD",
+  black: '#000',
 };
 
 const fonts = {

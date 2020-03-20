@@ -22,18 +22,22 @@ const NewProduct = ({ newProduct }) => {
 
   return (
     <Container>
-        <HeadlineSection>Новинки</HeadlineSection>
+      <HeadlineSection>Новинки</HeadlineSection>
       <CardList>
         {newProduct.map(prod => (
           <CardItem key={prod.id}>
             <LinkItem to="/">
-              <CardImage src={prod.image} alt="new" />
+              <ImgWrap style={{ backgroundColor: "#ffffff" }}>
+                <CardImage src={prod.image} alt="new" />
+              </ImgWrap>
               <CardDescr>{textSlice(prod.title)}</CardDescr>
             </LinkItem>
             <CardBrandName>{prod.brandName}</CardBrandName>
             <CardPrice>{prod.price}</CardPrice>
-            {/* <FavoriteBorderOutlinedIcon /> */}
-            {/* <AddShoppingCartOutlinedIcon /> */}
+            <Container>
+              <FavoriteBorderOutlinedIcon />
+              <AddShoppingCartOutlinedIcon />
+            </Container>
           </CardItem>
         ))}
       </CardList>
@@ -43,7 +47,6 @@ const NewProduct = ({ newProduct }) => {
 
 const Container = styled.div`
   /* margin-left: 10px; */
-
 `;
 
 const HeadlineSection = styled.h2`
@@ -70,23 +73,25 @@ const CardItem = styled.li`
   width: 193px;
   height: 400px;
   padding: 7px 7px 0px;
-  background-color: #edeaea;
+  background-color: ${({theme}) => theme.colors.mainColor};
   margin: 20px 8px 9px 8px;
 `;
 
 const LinkItem = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: ${({theme}) => theme.colors.black};
+`;
+
+const ImgWrap = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 10px;
 `;
 
 const CardImage = styled.img`
   display: inline-block;
-  background-color: white;
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
-  background-color: white;
-
+  border: 2px solid ${({ theme }) => theme.colors.white};
 `;
 
 const CardDescr = styled.h3`
