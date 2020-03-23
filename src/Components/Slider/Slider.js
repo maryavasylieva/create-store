@@ -22,16 +22,16 @@ const Slider = props => {
   const autoPlayRef = useRef();
 
   useEffect(() => {
-      autoPlayRef.current = nextSlide;
-  })
+    autoPlayRef.current = nextSlide;
+  });
 
   useEffect(() => {
     const play = () => {
       autoPlayRef.current();
     };
 
-    const interval = setInterval(play, props.autoPlay * 1000);
-    return () => clearInterval(interval)
+    const interval = setInterval(play, props.autoPlay * 2000);
+    return () => {clearInterval(interval)};
   }, []);
 
   const nextSlide = () => {

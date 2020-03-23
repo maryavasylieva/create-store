@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
-import AddShoppingCartOutlinedIcon from "@material-ui/icons/AddShoppingCartOutlined";
+
+import { ReactComponent as Like } from "../../assets/icon/001-heart.svg";
+import { ReactComponent as Cart } from "../../assets/icon/001-shopping-cart.svg";
 
 const NewProduct = ({ newProduct }) => {
   const textSlice = title => {
@@ -27,17 +28,19 @@ const NewProduct = ({ newProduct }) => {
         {newProduct.map(prod => (
           <CardItem key={prod.id}>
             <LinkItem to="/">
-              <ImgWrap style={{ backgroundColor: "#ffffff" }}>
+              <ImgWrap>
                 <CardImage src={prod.image} alt="new" />
               </ImgWrap>
               <CardDescr>{textSlice(prod.title)}</CardDescr>
             </LinkItem>
             <CardBrandName>{prod.brandName}</CardBrandName>
             <CardPrice>{prod.price}</CardPrice>
-            <Container>
-              <FavoriteBorderOutlinedIcon />
-              <AddShoppingCartOutlinedIcon />
-            </Container>
+            <IconWrap>
+              <IconLike />
+              <CartButton>
+                <IconCart />В корзину
+              </CartButton>
+            </IconWrap>
           </CardItem>
         ))}
       </CardList>
@@ -47,6 +50,52 @@ const NewProduct = ({ newProduct }) => {
 
 const Container = styled.div`
   /* margin-left: 10px; */
+`;
+
+const CartButton = styled.button`
+  display: block;
+  width: 105px;
+  height: 35px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #bcb7b7;
+  border: none;
+`;
+
+
+const IconCart = styled(Cart)`
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+`;
+
+// const IconLike = styled(Like)`
+//   display: inline-block;
+//   width: 20px;
+//   height: 20px;
+//   margin-right: 10px;
+//   border-left: 1px solid #dedede
+
+//   /* &::after {
+//     content: "";
+//     border: 1px solid #000000;
+//     margin-left: 20px;
+//     background-color: #6b7d83;
+//   } */
+
+// `;
+
+const IconLike = styled(Like)`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+`;
+
+const IconWrap = styled.div`
+  display: flex;
 `;
 
 const HeadlineSection = styled.h2`
@@ -73,13 +122,13 @@ const CardItem = styled.li`
   width: 193px;
   height: 400px;
   padding: 7px 7px 0px;
-  background-color: ${({theme}) => theme.colors.mainColor};
+  background-color: ${({ theme }) => theme.colors.mainColor};
   margin: 20px 8px 9px 8px;
 `;
 
 const LinkItem = styled(Link)`
   text-decoration: none;
-  color: ${({theme}) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const ImgWrap = styled.div`
@@ -90,7 +139,7 @@ const ImgWrap = styled.div`
 const CardImage = styled.img`
   display: inline-block;
   max-width: 100%;
-  height: auto;
+  height: 190px;
   border: 2px solid ${({ theme }) => theme.colors.white};
 `;
 
