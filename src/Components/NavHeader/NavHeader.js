@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import Logo from "../../assets/img/ArtistShopLogo.png";
 
 const NavHeader = () => {
   return (
@@ -33,10 +32,6 @@ const HeadContainer = styled.div`
 
   /* TODO: set hardcoded color to the variable */
 `;
-
-// const LogoImg = styled.img`
-//    margin: 0 auto;
-// `
 
 const HeadRight = styled.div`
   padding: 10px 0px;
