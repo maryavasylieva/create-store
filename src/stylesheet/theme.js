@@ -6,7 +6,7 @@ const colors = {
 };
 
 const fonts = {
-  notoSans: "Noto Sans",
+  notoSans: "Noto Sans JP",
   montserrat: "Montserrat"
 };
 
