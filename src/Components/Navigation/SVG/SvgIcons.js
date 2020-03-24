@@ -21,7 +21,6 @@ const LoupeSvg = styled(Loupe)`
   display: inline-block;
   width: 20px;
   height: 20px;
-  /* margin-top: 20px; */
   margin-right: 10px;
   cursor: pointer;
   &:hover {
@@ -34,7 +33,6 @@ const LikeHeartSvg = styled(LikeHeart)`
   display: inline-block;
   width: 20px;
   height: 20px;
-  /* margin-top: 20px; */
   margin-right: 10px;
   cursor: pointer;
   &:hover {
@@ -47,7 +45,6 @@ const CartSvg = styled(Cart)`
   display: inline-block;
   width: 20px;
   height: 20px;
-  /* margin-top: 20px; */
   margin-right: 10px;
   cursor: pointer;
   &:hover {

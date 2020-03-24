@@ -22,8 +22,8 @@ const Slider = props => {
   const autoPlayRef = useRef();
 
   useEffect(() => {
-      autoPlayRef.current = nextSlide;
-  })
+    autoPlayRef.current = nextSlide;
+  });
 
   useEffect(() => {
     const play = () => {
@@ -31,7 +31,9 @@ const Slider = props => {
     };
 
     const interval = setInterval(play, props.autoPlay * 1000);
-    return () => clearInterval(interval)
+    // const stopAutoScroll = window.addEventListener("mouseover", clearInterval(interval));
+    return () => clearInterval(interval);
+
   }, []);
 
   const nextSlide = () => {
@@ -84,6 +86,11 @@ const Slider = props => {
       <Dots slides={props.slides} activeIndex={activeIndex} />
     </div>
   );
+};
+
+Slider.defaultProps = {
+  slides: [],
+  autoPlay: null
 };
 
 const SliderCSS = css`

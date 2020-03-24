@@ -3,7 +3,6 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { routes } from "./Components/routes";
-// import Navigation from "./Components/Navigation/Navigation";
 import NavHeader from "./Components/NavHeader/NavHeader";
 import theme from "./stylesheet/theme";
 import Navigation from "./Components/Navigation/Navigation";
