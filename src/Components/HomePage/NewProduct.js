@@ -91,7 +91,7 @@ const IconLike = styled(Like)`
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin: 8px 10px 0 0px;
 `;
 
 const IconWrap = styled.div`
