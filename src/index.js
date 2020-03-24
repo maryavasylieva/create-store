@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Root from "./Components/Root/Root";
+import { BrowserRouter, Route } from "react-router-dom";
+import "antd/dist/antd.css";
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+import Root from "./Components/Root/Root";
+import "./scss/index.scss";
+import "./scss/normalize.scss";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <Route component={Root} />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
