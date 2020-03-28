@@ -5,38 +5,44 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import DropdownList from "../Dropdown/Dropdown";
-import css from "../Navigation.module.css";
 
 const NavigationList = () => {
   return (
     <NavList>
       <NavElem>
-        <NavLink to="/" exact className={css.link}>
+        <Link to="/" exact >
           Главная
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/catalog" className={css.link}>
+        <Link to="/catalog">
           <Dropdown overlay={DropdownList}>
             <TextDrop>
               Каталог <DownOutlined />
             </TextDrop>
           </Dropdown>
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/about" className={css.link}>
+        <Link to="/about" >
           Про нас
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/contact" className={css.link}>
+        <Link to="/contact" >
           Контакты
-        </NavLink>
+        </Link>
       </NavElem>
     </NavList>
   );
 };
+
+const Link = styled(NavLink)`
+   color: #000000;
+   &:hover{
+     color: #afacac;
+   }
+`
 
 const NavList = styled.ul`
   margin: 0;

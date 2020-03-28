@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Mail } from "../../assets/icon/navHeaderIcon/001-mail.svg";
+// import { ReactComponent as Mail } from "../../assets/icon/navHeaderIcon/001-mail.svg";
 // import { ReactComponent as Phone } from "../../assets/icon/navHeaderIcon/phone.svg";
-import { ReactComponent as Enter } from "../../assets/icon/navHeaderIcon/doorway.svg";
-import { ReactComponent as Exit } from "../../assets/icon/navHeaderIcon/emergency-exit.svg";
-import { ReactComponent as Card } from "../../assets/icon/navHeaderIcon/credit-card.svg";
+// import { ReactComponent as Enter } from "../../assets/icon/navHeaderIcon/doorway.svg";
+// import { ReactComponent as Exit } from "../../assets/icon/navHeaderIcon/emergency-exit.svg";
+// import { ReactComponent as Card } from "../../assets/icon/navHeaderIcon/credit-card.svg";
 import IconNavHeader from "./IconNavHeader";
 
 const NavHeader = () => {
@@ -58,6 +58,9 @@ const HeadText = styled(Link)`
     font-size: 11px;
     &:not(:last-child) {
       margin-right: 10px;
+    }
+    &:hover {
+      color: #afacac;
     }
   }
 `;

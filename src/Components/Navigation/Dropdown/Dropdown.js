@@ -9,11 +9,19 @@ const DropdownList = () => (
   <MenuDropdown>
     {dropdownRoutes.map(route => (
       <Item key={route.path}>
-        <NavLink to={route.path}>{route.name}</NavLink>
+        <Link to={route.path}>{route.name}</Link>
       </Item>
     ))}
   </MenuDropdown>
 );
+
+const Link = styled(NavLink)`
+  color: #000000;
+  &:hover {
+    color: #afacac;
+  }
+`;
+
 
 const MenuDropdown = styled(Menu)`
   width: 220px;

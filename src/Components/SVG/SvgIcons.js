@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { ReactComponent as Loupe } from "../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../assets/icon/002-love-and-romance.svg";
@@ -15,7 +15,7 @@ const SvgIcon = () => {
   );
 };
 
-const LoupeSvg = styled(Loupe)`
+const sharedStyles = css`
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -23,35 +23,21 @@ const LoupeSvg = styled(Loupe)`
   margin-right: 10px;
   cursor: pointer;
   &:hover {
-    fill: blue;
+    fill: #afacac;
     transition: all 300ms ease-in-out;
   }
+`;
+
+const LoupeSvg = styled(Loupe)`
+  ${sharedStyles}
 `;
 
 const LikeHeartSvg = styled(LikeHeart)`
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  /* margin-top: 20px; */
-  margin-right: 10px;
-  cursor: pointer;
-  &:hover {
-    fill: blue;
-    transition: all 300ms ease-in-out;
-  }
+  ${sharedStyles}
 `;
 
 const CartSvg = styled(Cart)`
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  /* margin-top: 20px; */
-  margin-right: 10px;
-  cursor: pointer;
-  &:hover {
-    fill: blue;
-    transition: all 300ms ease-in-out;
-  }
+  ${sharedStyles}
 `;
 
 export default SvgIcon;
