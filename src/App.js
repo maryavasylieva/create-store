@@ -6,8 +6,7 @@ import { routes } from "./Components/routes";
 import NavHeader from "./Components/NavHeader/NavHeader";
 import theme from "./stylesheet/theme";
 import Navigation from "./Components/Navigation/Navigation";
-// import Slider from "./Components/Slider/Slider";
-// import images from "./Components/Slider/images";
+
 import Carousel from "./Components/Carousel/Carousel";
 
 const App = () => {
@@ -15,8 +14,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <NavHeader />
       <Navigation />
-      <Carousel/>
-
+      <Carousel />
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           {routes.map(route => (

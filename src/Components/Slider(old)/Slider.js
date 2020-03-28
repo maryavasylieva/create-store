@@ -30,7 +30,7 @@ const Slider = props => {
       autoPlayRef.current();
     };
 
-    const interval = setInterval(play, props.autoPlay * 1000);
+    const interval = setInterval(play, props.autoPlay * 3000);
     // const stopAutoScroll = window.addEventListener("mouseover", clearInterval(interval));
     return () => clearInterval(interval);
 
