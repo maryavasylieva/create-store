@@ -1,7 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
-
-
+import styled from "styled-components";
 
 import { ReactComponent as Loupe } from "../../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../../assets/icon/002-love-and-romance.svg";
