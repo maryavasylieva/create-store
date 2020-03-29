@@ -38,9 +38,9 @@ const NavigationList = () => {
 };
 
 const Link = styled(NavLink)`
-   color: #000000;
+   color: ${({theme}) => theme.colors.black};
    &:hover{
-     color: #afacac;
+     color: ${({theme}) => theme.colors.softGrey};
    }
 `
 
@@ -50,7 +50,7 @@ const NavList = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: ${({theme}) => theme.colors.white};
 `;
 
 const TextDrop = styled.p`
@@ -66,7 +66,7 @@ const NavElem = styled.li`
   padding: 40px 0px 40px 0px;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: ${({theme}) => theme.fonts.montserrat};
   margin-right: 20px;
 `;
 

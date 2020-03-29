@@ -38,7 +38,7 @@ const IconNavHeader = () => {
 const HeadContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  background-color: #edeaea;
+  background-color: ${({theme}) => theme.colors.mainColor};
   margin-bottom: 10px;
   width: 100%;
   /* TODO: set hardcoded color to the variable */
@@ -61,7 +61,7 @@ const styleSvg = css`
   height: 20px;
   margin-right: 10px;
   &:hover {
-    fill: #afacac;
+    fill: ${({theme}) => theme.colors.softGrey};
     transition: all 300ms ease-in-out;
   }
 `;

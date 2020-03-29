@@ -34,9 +34,9 @@ const BurgerMenu = () => {
 };
 
 const Link = styled(NavLink)`
-  color: #000000;
+  color: ${({theme}) => theme.colors.black};
   &:hover {
-    color: #afacac;
+    color: ${({theme}) => theme.colors.softGrey};
   }
 `;
 
@@ -46,18 +46,16 @@ const TextDrop = styled.p`
 
 const BurgerList = styled.ul`
   list-style-type: none;
-  background-color: white;
+  background-color: ${({theme}) => theme.colors.white };
   display: block;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   width: 300px;
-  z-index: 100;
+  z-index: 9;
   margin: 0 auto;
-  /* box-shadow: 0 16px 6px 2px rgba(0, 0, 0, 0.14); */
   @media screen and (min-width: 768px) {
-    background-color: beige;
     left: 15px;
     width: 600px;
   }
@@ -67,7 +65,7 @@ const BurgerItem = styled.li`
   padding: 20px 15px;
   text-transform: uppercase;
   &:hover {
-    background-color: #edeaea;
+    background-color: ${({theme}) => theme.colors.mainColor};
   }
 `;
 

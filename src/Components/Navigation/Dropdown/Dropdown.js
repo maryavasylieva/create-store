@@ -16,9 +16,9 @@ const DropdownList = () => (
 );
 
 const Link = styled(NavLink)`
-  color: #000000;
+  color: ${({theme}) => theme.colors.black};
   &:hover {
-    color: #afacac;
+    color: ${({theme}) => theme.colors.softGrey};
   }
 `;
 
@@ -31,7 +31,7 @@ const MenuDropdown = styled(Menu)`
 const Item = styled(Menu.Item)`
   padding: 10px;
   &:hover {
-    background-color: #edeaea;
+    background-color: ${({theme}) => theme.colors.mainColor};
   }
 `;
 export default DropdownList;

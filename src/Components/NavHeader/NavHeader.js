@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 // import { ReactComponent as Mail } from "../../assets/icon/navHeaderIcon/001-mail.svg";
@@ -22,19 +22,23 @@ const NavHeader = () => {
 
         <HeadRight>
           <HeadText to="/personalCard">Карта лояльности</HeadText>
-          <HeadText to="/auth">Войти</HeadText>
+          <HeadText to="/login">Войти</HeadText>
         </HeadRight>
       </HeadContainer>
     </>
   );
 };
 
+const padding = css`
+  padding: 10px 0px;
+`;
+
 const HeadContainer = styled.div`
   display: none;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-around;
-    background-color: #edeaea;
+    background-color: ${({ theme }) => theme.colors.mainColor};
     margin-bottom: 10px;
     width: 100%;
   }
@@ -42,25 +46,25 @@ const HeadContainer = styled.div`
 `;
 
 const HeadRight = styled.div`
-  padding: 10px 0px;
+  ${padding}
 `;
 
 const HeadLeft = styled.div`
-  padding: 10px 0px;
+  ${padding}
 `;
 
 const HeadText = styled(Link)`
   display: none;
   @media screen and (min-width: 768px) {
     display: inline-block;
-    color: #c1bdbd;
+    color: ${({ theme }) => theme.colors.whiteGrey};
     text-transform: uppercase;
     font-size: 11px;
     &:not(:last-child) {
       margin-right: 10px;
     }
     &:hover {
-      color: #afacac;
+      color: ${({ theme }) => theme.colors.softGrey};
     }
   }
 `;
