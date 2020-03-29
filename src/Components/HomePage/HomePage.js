@@ -39,7 +39,7 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    width: 1190px;
+    /* width: 1190px; */
     position: relative;
     display: flex;
     justify-content: space-around;
