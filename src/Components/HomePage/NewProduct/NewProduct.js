@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Container, Row, Col } from "reactstrap";
 
 import { ReactComponent as Like } from "../../../assets/icon/001-heart.svg";
 import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
-const NewProduct = ({ newProduct }) => {
-
+const NewProduct = ({ newProduct, props }) => {
   const textSlice = title => {
     let sliceText;
     sliceText = title;
@@ -23,35 +23,35 @@ const NewProduct = ({ newProduct }) => {
   };
 
   return (
+      // <HeadlineSection>Новинки</HeadlineSection>
     <Container>
-      <HeadlineSection>Новинки</HeadlineSection>
-      <CardList>
-        {newProduct.map(prod => (
-          <CardItem key={prod.id}>
-            <LinkItem to="/">
-              <ImgWrap>
-                <CardImage src={prod.image} alt="new" />
-              </ImgWrap>
-              <CardDescr>{textSlice(prod.title)}</CardDescr>
-            </LinkItem>
-            <CardBrandName>{prod.brandName}</CardBrandName>
-            <CardPrice>{prod.price}</CardPrice>
-            <IconWrap>
-              <IconLike />
-              <CartButton>
-                <IconCart />В корзину
-              </CartButton>
-            </IconWrap>
-          </CardItem>
-        ))}
-      </CardList>
+      <Row xs="4">
+        <Col>
+          <CardList>
+            {newProduct.map(prod => (
+              <CardItem key={prod.id}>
+                <LinkItem to="/">
+                  <ImgWrap>
+                    <CardImage src={prod.image} alt="new" />
+                  </ImgWrap>
+                  <CardDescr>{textSlice(prod.title)}</CardDescr>
+                </LinkItem>
+                <CardBrandName>{prod.brandName}</CardBrandName>
+                <CardPrice>{prod.price}</CardPrice>
+                <IconWrap>
+                  <IconLike />
+                  <CartButton>
+                    <IconCart />В корзину
+                  </CartButton>
+                </IconWrap>
+              </CardItem>
+            ))}
+          </CardList>
+        </Col>
+      </Row>
     </Container>
   );
 };
-
-const Container = styled.div`
-  /* margin-left: 10px; */
-`;
 
 const CartButton = styled.button`
   display: block;
@@ -61,14 +61,13 @@ const CartButton = styled.button`
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
-  background-color: ${({theme}) => theme.colors.buttonBackground};
+  background-color: ${({ theme }) => theme.colors.buttonBackground};
   border: none;
-  &:hover{
-    background-color: ${({theme}) => theme.colors.hoverButton};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hoverButton};
     transition: all 500ms ease-in-out;
   }
 `;
-
 
 const IconCart = styled(Cart)`
   width: 12px;
@@ -112,12 +111,12 @@ const HeadlineSection = styled.h2`
 `;
 
 const CardList = styled.ul`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: space-evenly;
   padding: 0;
-  list-style-type: none;
+  list-style-type: none; */
 `;
 
 const CardItem = styled.li`
