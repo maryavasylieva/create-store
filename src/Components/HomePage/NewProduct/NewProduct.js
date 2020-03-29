@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 import { ReactComponent as Like } from "../../../assets/icon/001-heart.svg";
 import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
-const NewProduct = ({ newProduct, props }) => {
+const NewProduct = ({ newProduct }) => {
   const textSlice = title => {
     let sliceText;
     sliceText = title;
@@ -23,74 +23,40 @@ const NewProduct = ({ newProduct, props }) => {
   };
 
   return (
-    <Container>
+    <Container fluid>
       <Row>
-        <Col>.col</Col>
+        <HeadlineSection>Новинки</HeadlineSection>
       </Row>
-      <Row>
-        <Col>.col</Col>
-        <Col>.col</Col>
-        <Col>.col</Col>
-        <Col>.col</Col>
-      </Row>
-      <Row>
-        <Col xs="3">.col-3</Col>
-        <Col xs="auto">.col-auto - variable width content</Col>
-        <Col xs="3">.col-3</Col>
-      </Row>
-      <Row>
-        <Col xs="6">.col-6</Col>
-        <Col xs="6">.col-6</Col>
-      </Row>
-      <Row>
-        <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-        <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-        <Col sm="4">.col-sm-4</Col>
-      </Row>
-      <Row>
-        <Col sm={{ size: 6, order: 2, offset: 1 }}>.col-sm-6 .order-sm-2 .offset-sm-1</Col>
-      </Row>
-      <Row>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>.col-sm-12 .col-md-6 .offset-md-3</Col>
-      </Row>
-      <Row>
-        <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
-        <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
+      <Row xs="2" sm="2" md="4" lg="6" xl="8">
+        {newProduct.map(prod => (
+          <CardCol key={prod.id}>
+            <CardItem>
+              <LinkItem to="/">
+                <ImgWrap>
+                  <CardImage src={prod.image} alt="new" />
+                </ImgWrap>
+                <CardDescr>{textSlice(prod.title)}</CardDescr>
+              </LinkItem>
+              <CardBrandName>{prod.brandName}</CardBrandName>
+              <CardPrice>{prod.price}</CardPrice>
+              <IconWrap>
+                <IconLike />
+                <CartButton>
+                  <IconCart />В корзину
+                </CartButton>
+              </IconWrap>
+            </CardItem>
+          </CardCol>
+        ))}
       </Row>
     </Container>
   );
-
-  // return (
-  //   // <HeadlineSection>Новинки</HeadlineSection>
-  //   <Container>
-
-  //     {/* <Row xs="auto">
-  //       <Col>
-  //         <CardList>
-  //           {newProduct.map(prod => (
-  //             <CardItem key={prod.id}>
-  //               <LinkItem to="/">
-  //                 <ImgWrap>
-  //                   <CardImage src={prod.image} alt="new" />
-  //                 </ImgWrap>
-  //                 <CardDescr>{textSlice(prod.title)}</CardDescr>
-  //               </LinkItem>
-  //               <CardBrandName>{prod.brandName}</CardBrandName>
-  //               <CardPrice>{prod.price}</CardPrice>
-  //               <IconWrap>
-  //                 <IconLike />
-  //                 <CartButton>
-  //                   <IconCart />В корзину
-  //                 </CartButton>
-  //               </IconWrap>
-  //             </CardItem>
-  //           ))}
-  //         </CardList>
-  //       </Col>
-  //     </Row> */}
-  //   </Container>
-  // );
 };
+
+const CardCol = styled(Col)`
+  margin-bottom: 20px;
+  padding-left: 0;
+`;
 
 const CartButton = styled.button`
   display: block;
@@ -143,27 +109,19 @@ const IconWrap = styled.div`
 
 const HeadlineSection = styled.h2`
   text-transform: uppercase;
+  font-size: 25px;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-weight: 700;
   color: ${({ theme }) => theme.colors.lightGrey};
-  padding-left: 30px;
+  padding-left: 5px;
 `;
 
-const CardList = styled.ul`
-  /* display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  padding: 0;
-  list-style-type: none; */
-`;
-
-const CardItem = styled.li`
+const CardItem = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  width: 193px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   padding: 7px 7px 0px;
   background-color: ${({ theme }) => theme.colors.mainColor};
   margin: 20px 8px 9px 8px;
@@ -199,6 +157,7 @@ const CardDescr = styled.h3`
 const CardBrandName = styled.p`
   text-align: center;
   font-weight: 700;
+  font-size: 12px;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.lightGrey};
 `;

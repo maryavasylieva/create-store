@@ -31,14 +31,14 @@ const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   font-weight: normal;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.screen.tablet}) {
     display: flex;
     flex-direction: column;
     max-width: 100%;
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
     /* width: 1190px; */
     position: relative;
     display: flex;
@@ -49,7 +49,7 @@ const Container = styled.div`
 `;
 
 const RightSidebar = styled.div`
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
     position: relative;
     display: block;
     width: 78%;
@@ -57,10 +57,10 @@ const RightSidebar = styled.div`
 `;
 
 const LeftSidebar = styled.div`
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
     position: relative;
     display: block;
-    width: 22%;
+    /* width: 22%; */
     height: 850px;
     display: flex;
     background-color: ${({ theme }) => theme.colors.mainColor};

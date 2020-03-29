@@ -17,9 +17,16 @@ const fonts = {
   montserrat: "Montserrat"
 };
 
+const screen = {
+  mobile: "328px",
+  tablet: "768px",
+  desktop: "1200px"
+}
+
 const theme = {
   fonts,
-  colors
+  colors,
+  screen
 };
 
 export default theme;

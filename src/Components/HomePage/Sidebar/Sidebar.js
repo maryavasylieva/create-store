@@ -25,6 +25,7 @@ const SubTitle = styled.h3`
   font-size: 15px;
   text-transform: uppercase;
   text-align: left;
+  font-weight: 600;
   padding: 13px 15px;
   color: ${({ theme }) => theme.colors.subTitle};
   background-color: ${({ theme }) => theme.colors.lightGrey};
@@ -41,6 +42,7 @@ const ItemList = styled.li`
   text-align: left;
   padding: 10px 30px 10px 18px;
   font-size: 13px;
+  font-weight: 600;
   &:not(:last-child) {
     border-bottom: 1px solid ${({ theme }) => theme.colors.hoverButton};
   }
