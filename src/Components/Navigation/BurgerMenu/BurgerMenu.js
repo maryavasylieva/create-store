@@ -44,7 +44,7 @@ const TextDrop = styled.p`
 
 const BurgerList = styled.ul`
   list-style-type: none;
-  background-color: white;
+  background-color: ${({theme}) => theme.colors.white };
   display: block;
   position: absolute;
   top: 100%;
@@ -53,9 +53,7 @@ const BurgerList = styled.ul`
   width: 300px;
   z-index: 100;
   margin: 0 auto;
-  /* box-shadow: 0 16px 6px 2px rgba(0, 0, 0, 0.14); */
   @media screen and (min-width: 768px) {
-    background-color: beige;
     left: 15px;
     width: 600px;
   }
@@ -64,7 +62,6 @@ const BurgerList = styled.ul`
 const BurgerItem = styled.li`
   padding: 20px 15px;
   text-transform: uppercase;
-  /* text-align: center; */
 `;
 
 
