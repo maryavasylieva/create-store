@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-import Slider from "../Slider/Slider";
-import images from "../Slider/images";
-import Advantages from "./Advantages";
-import NewProduct from "./NewProduct";
+import Advantages from "./Advantages/Advantages";
+import NewProduct from "./NewProduct/NewProduct";
 import newProduct from "../../assets/newProduct.json";
+import Sidebar from "./Sidebar/Sidebar";
+import items from "../../assets/sidebarItems.json";
 
 const HomePage = () => {
   return (
     <>
-      <Slider slides={images} autoPlay={2} />
       <Advantages />
       <Container>
         <RightSidebar>
           <NewProduct newProduct={newProduct} />
         </RightSidebar>
-        <LeftSidebar></LeftSidebar>
+        <LeftSidebar>
+          <Sidebar items={items} />
+        </LeftSidebar>
       </Container>
     </>
   );
@@ -51,7 +52,7 @@ const RightSidebar = styled.div`
   @media screen and (min-width: 1200px) {
     position: relative;
     display: block;
-    width: 80%;
+    width: 78%;
   }
 `;
 
@@ -59,9 +60,10 @@ const LeftSidebar = styled.div`
   @media screen and (min-width: 1200px) {
     position: relative;
     display: block;
-    width: 20%;
+    width: 22%;
+    height: 850px;
     display: flex;
-    background-color: grey;
+    background-color: ${({ theme }) => theme.colors.mainColor};
   }
 `;
 

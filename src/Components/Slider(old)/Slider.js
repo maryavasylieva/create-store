@@ -30,8 +30,10 @@ const Slider = props => {
       autoPlayRef.current();
     };
 
-    const interval = setInterval(play, props.autoPlay * 2000);
-    return () => {clearInterval(interval)};
+    const interval = setInterval(play, props.autoPlay * 3000);
+    // const stopAutoScroll = window.addEventListener("mouseover", clearInterval(interval));
+    return () => clearInterval(interval);
+
   }, []);
 
   const nextSlide = () => {
@@ -84,6 +86,11 @@ const Slider = props => {
       <Dots slides={props.slides} activeIndex={activeIndex} />
     </div>
   );
+};
+
+Slider.defaultProps = {
+  slides: [],
+  autoPlay: null
 };
 
 const SliderCSS = css`

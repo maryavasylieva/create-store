@@ -48,14 +48,14 @@ const SubTitle = styled.h4`
   font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 10px;
-  color: #333333;
+  color: ${({theme}) => theme.colors.SubTitle};
 `;
 
 const MainText = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  color: #999999;
+  color: ${({theme}) => theme.colors.mainText};
 `;
 
 export default Advantages;

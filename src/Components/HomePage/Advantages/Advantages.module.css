@@ -23,7 +23,7 @@
     width: 52px;
     height: 51px;
     content: "";
-    background-image: url(../../assets/icon/003-truck.svg);
+    background-image: url(../../../assets/icon/003-truck.svg);
     position: absolute;
     left: -76px;
     right: 50%;
@@ -35,7 +35,7 @@
     width: 52px;
     height: 51px;
     content: "";
-    background-image: url(../../assets/icon/shop.svg);
+    background-image: url(../../../assets/icon/shop.svg);
     position: absolute;
     left: -76px;
     right: 50%;
@@ -47,7 +47,7 @@
     width: 52px;
     height: 51px;
     content: "";
-    background-image: url(../../assets/icon/001-send.svg);
+    background-image: url(../../../assets/icon/001-send.svg);
     position: absolute;
     left: -76px;
     right: 50%;
@@ -58,7 +58,7 @@
     width: 52px;
     height: 51px;
     content: "";
-    background-image: url(../../assets/icon/001-group.svg);
+    background-image: url(../../../assets/icon/001-group.svg);
     position: absolute;
     left: -76px;
     right: 50%;

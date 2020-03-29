@@ -8,7 +8,6 @@ import DropdownList from "../Dropdown/Dropdown";
 import css from "../Navigation.module.css";
 
 const NavigationList = () => {
-
   return (
     <NavList>
       <NavElem>

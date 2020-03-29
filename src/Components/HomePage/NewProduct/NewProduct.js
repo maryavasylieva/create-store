@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { ReactComponent as Like } from "../../assets/icon/001-heart.svg";
-import { ReactComponent as Cart } from "../../assets/icon/001-shopping-cart.svg";
+import { ReactComponent as Like } from "../../../assets/icon/001-heart.svg";
+import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
 const NewProduct = ({ newProduct }) => {
+
   const textSlice = title => {
     let sliceText;
     sliceText = title;
@@ -60,8 +61,12 @@ const CartButton = styled.button`
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
-  background-color: #bcb7b7;
+  background-color: ${({theme}) => theme.colors.buttonBackground};
   border: none;
+  &:hover{
+    background-color: ${({theme}) => theme.colors.hoverButton};
+    transition: all 500ms ease-in-out;
+  }
 `;
 
 
