@@ -42,7 +42,6 @@ const Container = styled.div`
     /* width: 1190px; */
     position: relative;
     display: flex;
-    justify-content: space-around;
     flex-direction: row-reverse;
     margin: 0 auto;
   }
@@ -64,6 +63,8 @@ const LeftSidebar = styled.div`
     height: 850px;
     display: flex;
     background-color: ${({ theme }) => theme.colors.mainColor};
+  margin-right: 30px;
+  border-radius: 4px;
   }
 `;
 

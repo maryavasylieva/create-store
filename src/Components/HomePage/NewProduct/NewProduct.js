@@ -27,7 +27,7 @@ const NewProduct = ({ newProduct }) => {
       <Row>
         <HeadlineSection>Новинки</HeadlineSection>
       </Row>
-      <Row xs="2" sm="2" md="4" lg="6" xl="8">
+      <Row xs="1" sm="2" md="4" lg="6" xl="8">
         {newProduct.map(prod => (
           <CardCol key={prod.id}>
             <CardItem>
@@ -54,8 +54,8 @@ const NewProduct = ({ newProduct }) => {
 };
 
 const CardCol = styled(Col)`
-  margin-bottom: 20px;
-  padding-left: 0;
+  /* margin-bottom: 20px;
+  padding-left: 0; */
 `;
 
 const CartButton = styled.button`
@@ -120,8 +120,8 @@ const CardItem = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
+  width: 193px;
+  height: 400px;
   padding: 7px 7px 0px;
   background-color: ${({ theme }) => theme.colors.mainColor};
   margin: 20px 8px 9px 8px;

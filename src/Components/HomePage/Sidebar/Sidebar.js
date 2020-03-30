@@ -30,6 +30,7 @@ const SubTitle = styled.h3`
   color: ${({ theme }) => theme.colors.subTitle};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: 0;
+  border-radius: 4px;
 `;
 
 const SidebarList = styled.ul`
