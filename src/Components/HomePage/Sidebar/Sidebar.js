@@ -1,63 +1,105 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Media from "react-media";
+import { CSSTransition } from "react-transition-group";
+import { CloseRounded } from "@material-ui/icons";
 
+import { ReactComponent as SidebarMenu } from "../../../assets/icon/menuSidebar/menu-color.svg";
+import Menu from "./Menu";
+import "../../../stylesheet/styleAnimation.css";
 
 const Sidebar = ({ items }) => {
+  const [state, setState] = useState({
+    isOpen: false
+  });
+
+  const { isOpen } = state;
+
+  const handleClickOpen = () => {
+    setState({ ...state, isOpen: true });
+  };
+
+  const handleClickClose = () => {
+    setState({ ...state, isOpen: false });
+  };
+
   return (
-    <div>
-      <SubTitle>Категории товаров</SubTitle>
+    <>
       <div>
-        <SidebarList>
-          {items.map((item, i) => (
-            <ItemList key={item + i}>
-              <StyleLink to="/">{item.title}</StyleLink>
-            </ItemList>
-          ))}
-        </SidebarList>
+        <Media
+          queries={{
+            small: "(max-width: 328px)",
+            medium: "(min-width: 768px) and (max-width: 1189px)",
+            large: "(min-width: 1200px)"
+          }}
+        >
+          {matches => (
+            <>
+              {matches.small && (
+                <Container>
+                  {isOpen ? (
+                    <CloseRounded onClick={handleClickClose} />
+                  ) : (
+                    <Wrapper>
+                      <SideBurger onClick={handleClickOpen} />
+                    </Wrapper>
+                  )}
+                  <CSSTransition
+                    in={isOpen}
+                    timeout={200}
+                    classNames="fade"
+                    unmountOnExit
+                  >
+                    <Menu items={items} />
+                  </CSSTransition>
+                </Container>
+              )}
+              {matches.medium && (
+                <Container>
+                  {isOpen ? (
+                    <CloseRounded fontSize="large" onClick={handleClickClose} />
+                  ) : (
+                    <Wrapper>
+                      <SideBurger fontSize="large" onClick={handleClickOpen} />
+                    </Wrapper>
+                  )}
+                  <CSSTransition
+                    in={isOpen}
+                    timeout={200}
+                    classNames="fade"
+                    unmountOnExit
+                  >
+                    <Menu items={items} />
+                  </CSSTransition>
+                </Container>
+              )}
+              {matches.large && <Menu items={items} />}
+            </>
+          )}
+        </Media>
       </div>
-    </div>
+    </>
   );
 };
 
-const SubTitle = styled.h3`
-  font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 15px;
-  text-transform: uppercase;
-  text-align: left;
-  font-weight: 600;
-  padding: 13px 15px;
-  color: ${({ theme }) => theme.colors.subTitle};
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-  margin: 0;
-  border-radius: 4px;
+const Container = styled.div`
+  position: fixed;
+  width: 100%;
+  top: 0;
 `;
 
-const SidebarList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+const Wrapper = styled.div`
+  background-color: beige;
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
 `;
 
-const ItemList = styled.li`
-  text-align: left;
-  padding: 10px 30px 10px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  &:not(:last-child) {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.hoverButton};
-  }
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.hover};
-    transition: all 300ms ease-in-out;
-  }
-`;
-
-const StyleLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.subTitle};
-  &:hover {
-    color: ${({ theme }) => theme.colors.hoverText};
-  }
+const SideBurger = styled(SidebarMenu)`
+  width: 30px;
+  height: 30px;
+  margin: 10px 0px 0px 10px;
 `;
 
 export default Sidebar;

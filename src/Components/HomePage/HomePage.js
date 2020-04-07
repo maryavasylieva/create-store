@@ -48,23 +48,22 @@ const Container = styled.div`
 `;
 
 const RightSidebar = styled.div`
+  position: relative;
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
-    position: relative;
     display: block;
     width: 78%;
   }
 `;
 
 const LeftSidebar = styled.div`
+  position: relative;
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
-    position: relative;
     display: block;
     /* width: 22%; */
     height: 850px;
     display: flex;
-    background-color: ${({ theme }) => theme.colors.mainColor};
-  margin-right: 30px;
-  border-radius: 4px;
+    margin-right: 30px;
+    border-radius: 4px;
   }
 `;
 

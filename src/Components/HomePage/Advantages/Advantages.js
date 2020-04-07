@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+// import {Container, Row, Col} from 'reactstrap'
 
 import css from "./Advantages.module.css";
 
 const Advantages = () => {
   return (
-    <ul className={css.section}>
+  <ul className={css.section}>
       <li className={css.list}>
         <div className={css.delivery}>
           <SubTitle>Доставка по всей Украине и миру</SubTitle>

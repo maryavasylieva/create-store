@@ -27,7 +27,7 @@ const NewProduct = ({ newProduct }) => {
       <Row>
         <HeadlineSection>Новинки</HeadlineSection>
       </Row>
-      <Row xs="1" sm="2" md="4" lg="6" xl="8">
+      <Row xs="1" sm="2" md="3" lg="5" xl="8">
         {newProduct.map(prod => (
           <CardCol key={prod.id}>
             <CardItem>
