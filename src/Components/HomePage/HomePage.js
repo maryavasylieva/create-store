@@ -62,7 +62,7 @@ const LeftSidebar = styled.div`
     /* width: 22%; */
     height: 850px;
     display: flex;
-    margin-right: 30px;
+    /* margin-right: 30px; */
     border-radius: 4px;
   }
 `;

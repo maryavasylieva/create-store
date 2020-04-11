@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Media from "react-media";
 import { CSSTransition } from "react-transition-group";
@@ -14,6 +14,19 @@ const Sidebar = ({ items }) => {
   });
 
   const { isOpen } = state;
+
+  const fixScroll = useRef();
+
+  useEffect(() => {
+    fixScroll.current = fixSidebar;
+  });
+
+   const fixSidebar = () => {
+    //  if() {
+
+    //  }
+   }
+
 
   const handleClickOpen = () => {
     setState({ ...state, isOpen: true });
@@ -36,13 +49,11 @@ const Sidebar = ({ items }) => {
           {matches => (
             <>
               {matches.small && (
-                <Container>
+                <>
                   {isOpen ? (
                     <CloseRounded onClick={handleClickClose} />
                   ) : (
-                    <Wrapper>
-                      <SideBurger onClick={handleClickOpen} />
-                    </Wrapper>
+                    <SideBurger onClick={handleClickOpen} />
                   )}
                   <CSSTransition
                     in={isOpen}
@@ -52,16 +63,14 @@ const Sidebar = ({ items }) => {
                   >
                     <Menu items={items} />
                   </CSSTransition>
-                </Container>
+                </>
               )}
               {matches.medium && (
-                <Container>
+                <>
                   {isOpen ? (
                     <CloseRounded fontSize="large" onClick={handleClickClose} />
                   ) : (
-                    <Wrapper>
-                      <SideBurger fontSize="large" onClick={handleClickOpen} />
-                    </Wrapper>
+                    <SideBurger fontSize="large" onClick={handleClickOpen} />
                   )}
                   <CSSTransition
                     in={isOpen}
@@ -71,7 +80,7 @@ const Sidebar = ({ items }) => {
                   >
                     <Menu items={items} />
                   </CSSTransition>
-                </Container>
+                </>
               )}
               {matches.large && <Menu items={items} />}
             </>
@@ -82,19 +91,19 @@ const Sidebar = ({ items }) => {
   );
 };
 
-const Container = styled.div`
-  position: fixed;
-  width: 100%;
-  top: 0;
-`;
+// const Container = styled.div`
+//   position: fixed;
+//   width: 100%;
+//   top: 0;
+// `;
 
-const Wrapper = styled.div`
-  background-color: beige;
-  width: 50px;
-  height: 50px;
-  border-top-right-radius: 20%;
-  border-bottom-right-radius: 20%;
-`;
+// const Wrapper = styled.div`
+//   background-color: beige;
+//   width: 50px;
+//   height: 50px;
+//   border-top-right-radius: 20%;
+//   border-bottom-right-radius: 20%;
+// `;
 
 const SideBurger = styled(SidebarMenu)`
   width: 30px;

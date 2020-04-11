@@ -27,7 +27,7 @@ const NewProduct = ({ newProduct }) => {
       <Row>
         <HeadlineSection>Новинки</HeadlineSection>
       </Row>
-      <Row xs="1" sm="2" md="3" lg="5" xl="8">
+      <Row xs="1" sm="2" md="4" lg="5" xl="8">
         {newProduct.map(prod => (
           <CardCol key={prod.id}>
             <CardItem>
@@ -113,7 +113,7 @@ const HeadlineSection = styled.h2`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-weight: 700;
   color: ${({ theme }) => theme.colors.lightGrey};
-  padding-left: 5px;
+  padding-left: 20px;
 `;
 
 const CardItem = styled.div`
