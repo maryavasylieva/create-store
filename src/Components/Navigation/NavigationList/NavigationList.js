@@ -55,7 +55,7 @@ const NavList = styled.ul`
 
 const TextDrop = styled.p`
   margin: 0;
-  @media screen and(min-width: 1024px) {
+  @media screen and(min-width: 1200px) {
     padding-bottom: 20px;
   }
 `;

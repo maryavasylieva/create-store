@@ -3,20 +3,24 @@ import { Menu } from "antd";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-import { dropdownRoutes } from "../../routes";
+import { helpRoutes } from "../routes";
 
-const DropdownList = () => (
-  <MenuDropdown>
-    {dropdownRoutes.map(route => (
-      <Item key={route.path}>
-        <Link to={route.path}>{route.name}</Link>
-      </Item>
-    ))}
-  </MenuDropdown>
-);
+const HelpDropdown = () => {
+  return (
+    <MenuDropdown>
+      {helpRoutes.map(route => (
+        <Item key={route.path}>
+          <Link to={route.path}>{route.name}</Link>
+        </Item>
+      ))}
+    </MenuDropdown>
+  );
+};
+
 
 const Link = styled(NavLink)`
   color: ${({theme}) => theme.colors.black};
+  font-size: 12px;
   &:hover {
     color: ${({theme}) => theme.colors.softGrey};
   }
@@ -24,9 +28,9 @@ const Link = styled(NavLink)`
 
 
 const MenuDropdown = styled(Menu)`
-  width: 220px;
-  text-transform: uppercase;
-  margin-top: 10px;
+  width: 200px;
+  /* text-transform: uppercase; */
+  margin-top: 16px;
 `;
 
 const Item = styled(Menu.Item)`
@@ -35,4 +39,5 @@ const Item = styled(Menu.Item)`
     background-color: ${({theme}) => theme.colors.mainColor};
   }
 `;
-export default DropdownList;
+
+export default HelpDropdown;

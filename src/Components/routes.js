@@ -5,9 +5,16 @@ const AsyncPaintsPages = lazy(() => import("../Pages/Paints"));
 const AsyncCanvasPages = lazy(() => import("../Pages/Canvas"));
 const AsyncCatalog = lazy(() => import("../Pages/Catalog"));
 const AsyncHome = lazy(() => import("../Pages/Home"));
+
 const AsyncLogin = lazy(() => import("../Pages/LogIn"));
 const AsyncRegistration = lazy(() => import("../Pages/Registration"));
-const AsyncPersonalCard = lazy(() => import("../Pages/PersonalCard"));
+
+const AsyncHelpPage = lazy(() => import("../Pages/HelpPage/HelpPage"));
+const AsyncPersonalCard = lazy(() => import("../Pages/HelpPage/PersonalCard"));
+const AsyncPayment = lazy(() => import("../Pages/HelpPage/Payment"));
+const AsyncReturnPage = lazy(() => import("../Pages/HelpPage/ReturnPage"));
+const AsyncDeliveryPage = lazy(() => import("../Pages/HelpPage/DeliveryPage"));
+
 const AsyncArtReproduct = lazy(() => import("../Pages/ArtReproductions"));
 const AsyncArtists = lazy(() => import("../Pages/Artists"));
 const AsyncDesigners = lazy(() => import("../Pages/Designers"));
@@ -37,8 +44,32 @@ export const dropdownRoutes = [
   }
 ];
 
+export const helpRoutes = [
+  {
+    path: "/personalCard",
+    component: AsyncPersonalCard,
+    name: "Карта лояльности"
+  },
+  {
+    path: "/paymentMethods",
+    component: AsyncPayment,
+    name: "Способы оплаты"
+  },
+  {
+    path: "/return",
+    component: AsyncReturnPage,
+    name: "Возврат и обмен товара"
+  },
+  {
+    path: "/delivery",
+    component: AsyncDeliveryPage,
+    name: "Доставка"
+  }
+];
+
 export const routes = [
   ...dropdownRoutes,
+  ...helpRoutes,
   {
     path: "/catalog",
     component: AsyncCatalog,
@@ -75,9 +106,9 @@ export const routes = [
     name: "Registration"
   },
   {
-    path: "/personalCard",
-    component: AsyncPersonalCard,
-    name: "PersonalCard"
+    path: "/helpPage",
+    component: AsyncHelpPage,
+    name: "HelpPage"
   },
   {
     path: "/",

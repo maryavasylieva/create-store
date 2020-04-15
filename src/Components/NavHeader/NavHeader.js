@@ -1,13 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import { Dropdown } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 
-// import { ReactComponent as Mail } from "../../assets/icon/navHeaderIcon/001-mail.svg";
-// import { ReactComponent as Phone } from "../../assets/icon/navHeaderIcon/phone.svg";
-// import { ReactComponent as Enter } from "../../assets/icon/navHeaderIcon/doorway.svg";
-// import { ReactComponent as Exit } from "../../assets/icon/navHeaderIcon/emergency-exit.svg";
-// import { ReactComponent as Card } from "../../assets/icon/navHeaderIcon/credit-card.svg";
 import IconNavHeader from "./IconNavHeader";
+import HelpDropdown from "./HelpDropdown";
 
 const NavHeader = () => {
   return (
@@ -21,7 +19,16 @@ const NavHeader = () => {
         </HeadLeft>
 
         <HeadRight>
-          <HeadText to="/personalCard">Карта лояльности</HeadText>
+          <Link to="/infoArt">
+
+          </Link>
+          <Link to="/helpPage">
+            <Dropdown overlay={HelpDropdown}>
+              <TextDrop>
+                Помощь <DownOutlined />
+              </TextDrop>
+            </Dropdown>
+          </Link>
           <HeadText to="/login">Войти</HeadText>
         </HeadRight>
       </HeadContainer>
@@ -31,6 +38,22 @@ const NavHeader = () => {
 
 const padding = css`
   padding: 10px 0px;
+`;
+
+const text = css`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    color: ${({ theme }) => theme.colors.whiteGrey};
+    text-transform: uppercase;
+    font-size: 11px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: ${({ theme }) => theme.colors.softGrey};
+    }
+  }
 `;
 
 const HeadContainer = styled.div`
@@ -54,19 +77,12 @@ const HeadLeft = styled.div`
 `;
 
 const HeadText = styled(Link)`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: inline-block;
-    color: ${({ theme }) => theme.colors.whiteGrey};
-    text-transform: uppercase;
-    font-size: 11px;
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-    &:hover {
-      color: ${({ theme }) => theme.colors.softGrey};
-    }
-  }
+  ${text}
+`;
+
+const TextDrop = styled.p`
+  ${text}
+  padding-right: 10px;
 `;
 
 export default NavHeader;
