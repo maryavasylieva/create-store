@@ -1,7 +1,4 @@
 .sidebar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 8px 40px;
   position: absolute;
   z-index: 1;
