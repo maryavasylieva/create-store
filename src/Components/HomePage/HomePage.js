@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 
 import Advantages from "./Advantages/Advantages";
 import NewProduct from "./NewProduct/NewProduct";
 import newProduct from "../../assets/newProduct.json";
-import Sidebar from "./Sidebar/Sidebar";
+// import Sidebar from "./Sidebar/Sidebar";
 import items from "../../assets/sidebarItems.json";
+import Side from "./Sidebar/Sidebar(test)/sidebar";
 
 const HomePage = () => {
+  const [isSticky, setSticky] = useState(false);
+  const stickyRef = useRef(null);
+
+  const handleScroll = () => {
+    window.pageYOffset > stickyRef.current.getBoundingClientRect().top
+      ? setSticky(true)
+      : setSticky(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", () => handleScroll);
+  }, []);
+
   return (
     <>
       <Advantages />
       <Container>
         <RightSidebar>
-          <NewProduct newProduct={newProduct} />
+          <NewProduct stickyRef={stickyRef} newProduct={newProduct} />
         </RightSidebar>
         <LeftSidebar>
-          <Sidebar items={items} />
+          <Side items={items} sticky={isSticky} />
         </LeftSidebar>
       </Container>
     </>

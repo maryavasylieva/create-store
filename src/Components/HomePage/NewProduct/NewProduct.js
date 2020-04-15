@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 import { ReactComponent as Like } from "../../../assets/icon/001-heart.svg";
 import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
-const NewProduct = ({ newProduct }) => {
+const NewProduct = ({ newProduct, stickyRef }) => {
   const textSlice = title => {
     let sliceText;
     sliceText = title;
@@ -23,33 +23,35 @@ const NewProduct = ({ newProduct }) => {
   };
 
   return (
-    <Container fluid>
-      <Row>
-        <HeadlineSection>Новинки</HeadlineSection>
-      </Row>
-      <Row xs="1" sm="2" md="4" lg="5" xl="8">
-        {newProduct.map(prod => (
-          <CardCol key={prod.id}>
-            <CardItem>
-              <LinkItem to="/">
-                <ImgWrap>
-                  <CardImage src={prod.image} alt="new" />
-                </ImgWrap>
-                <CardDescr>{textSlice(prod.title)}</CardDescr>
-              </LinkItem>
-              <CardBrandName>{prod.brandName}</CardBrandName>
-              <CardPrice>{prod.price}</CardPrice>
-              <IconWrap>
-                <IconLike />
-                <CartButton>
-                  <IconCart />В корзину
-                </CartButton>
-              </IconWrap>
-            </CardItem>
-          </CardCol>
-        ))}
-      </Row>
-    </Container>
+    <div ref={stickyRef}>
+      <Container fluid>
+        <Row>
+          <HeadlineSection>Новинки</HeadlineSection>
+        </Row>
+        <Row xs="1" sm="2" md="3" lg="5" xl="8">
+          {newProduct.map(prod => (
+            <CardCol key={prod.id}>
+              <CardItem>
+                <LinkItem to="/">
+                  <ImgWrap>
+                    <CardImage src={prod.image} alt="new" />
+                  </ImgWrap>
+                  <CardDescr>{textSlice(prod.title)}</CardDescr>
+                </LinkItem>
+                <CardBrandName>{prod.brandName}</CardBrandName>
+                <CardPrice>{prod.price}</CardPrice>
+                <IconWrap>
+                  <IconLike />
+                  <CartButton>
+                    <IconCart />В корзину
+                  </CartButton>
+                </IconWrap>
+              </CardItem>
+            </CardCol>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 
