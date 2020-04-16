@@ -22,7 +22,7 @@ const NavHeader = () => {
           <Link to="/infoArt">
 
           </Link>
-          <Link to="/helpPage">
+          <Link to="/helppage">
             <Dropdown overlay={HelpDropdown}>
               <TextDrop>
                 Помощь <DownOutlined />
@@ -65,7 +65,6 @@ const HeadContainer = styled.div`
     margin-bottom: 10px;
     width: 100%;
   }
-  /* TODO: set hardcoded color to the variable */
 `;
 
 const HeadRight = styled.div`
