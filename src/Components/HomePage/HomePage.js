@@ -4,9 +4,8 @@ import styled from "styled-components";
 import Advantages from "./Advantages/Advantages";
 import NewProduct from "./NewProduct/NewProduct";
 import newProduct from "../../assets/newProduct.json";
-// import Sidebar from "./Sidebar/Sidebar";
 import items from "../../assets/sidebarItems.json";
-import Side from "./Sidebar/Sidebar(test)/sidebar";
+import Sidebar from "./Sidebar/Sidebar";
 
 const HomePage = () => {
   const [isSticky, setSticky] = useState(false);
@@ -31,7 +30,7 @@ const HomePage = () => {
           <NewProduct stickyRef={stickyRef} newProduct={newProduct} />
         </RightSidebar>
         <LeftSidebar>
-          <Side items={items} sticky={isSticky} />
+          <Sidebar items={items} sticky={isSticky} />
         </LeftSidebar>
       </Container>
     </>
@@ -54,7 +53,6 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
-    /* width: 1190px; */
     position: relative;
     display: flex;
     flex-direction: row-reverse;
@@ -74,10 +72,8 @@ const LeftSidebar = styled.div`
   position: relative;
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}) {
     display: block;
-    /* width: 22%; */
     height: 850px;
     display: flex;
-    /* margin-right: 30px; */
     border-radius: 4px;
   }
 `;

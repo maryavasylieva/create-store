@@ -30,7 +30,7 @@ const NewProduct = ({ newProduct, stickyRef }) => {
         </Row>
         <Row xs="1" sm="2" md="3" lg="5" xl="8">
           {newProduct.map(prod => (
-            <CardCol key={prod.id}>
+            <Col key={prod.id}>
               <CardItem>
                 <LinkItem to="/">
                   <ImgWrap>
@@ -47,18 +47,13 @@ const NewProduct = ({ newProduct, stickyRef }) => {
                   </CartButton>
                 </IconWrap>
               </CardItem>
-            </CardCol>
+            </Col>
           ))}
         </Row>
       </Container>
     </div>
   );
 };
-
-const CardCol = styled(Col)`
-  /* margin-bottom: 20px;
-  padding-left: 0; */
-`;
 
 const CartButton = styled.button`
   display: block;

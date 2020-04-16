@@ -27,7 +27,6 @@ const SubTitle = styled.h3`
   font-weight: 600;
   padding: 13px 15px;
   color: ${({ theme }) => theme.colors.subTitle};
-  background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: 0;
   border-radius: 4px;
   @media screen and (min-width: ${({theme}) => theme.screen.tablet}) {
@@ -38,6 +37,7 @@ const SubTitle = styled.h3`
   @media screen and (min-width: ${({theme}) => theme.screen.desktop}) {
     text-align: left;
     font-size: 13px;
+    background-color: ${({ theme }) => theme.colors.lightGrey};
   }
 `;
 
@@ -46,7 +46,7 @@ const SidebarList = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0;
-`;
+  `;
 
 const ItemList = styled.li`
   text-align: left;
@@ -76,6 +76,7 @@ const StyleLink = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.hoverText};
   }
+  text-decoration: none;
 `;
 
 export default Menu;

@@ -1,32 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Media from "react-media";
 import { CSSTransition } from "react-transition-group";
 import { CloseRounded } from "@material-ui/icons";
 
-import { ReactComponent as SidebarMenu } from "../../../assets/icon/menuSidebar/menu-color.svg";
+import { ReactComponent as SidebarMenu } from "../../../assets/icon/menuSidebar/menu.svg";
 import Menu from "./Menu";
-import "../../../stylesheet/styleAnimation.css";
+import "./Sidebar.css";
 
-const Sidebar = ({ items }) => {
+const Sidebar = ({ items, sticky }) => {
   const [state, setState] = useState({
     isOpen: false
   });
 
   const { isOpen } = state;
-
-  const fixScroll = useRef();
-
-  useEffect(() => {
-    fixScroll.current = fixSidebar;
-  });
-
-   const fixSidebar = () => {
-    //  if() {
-
-    //  }
-   }
-
 
   const handleClickOpen = () => {
     setState({ ...state, isOpen: true });
@@ -49,7 +36,7 @@ const Sidebar = ({ items }) => {
           {matches => (
             <>
               {matches.small && (
-                <>
+                <div className={sticky ? "sidebar sidebar-sticky" : "sidebar"}>
                   {isOpen ? (
                     <CloseRounded onClick={handleClickClose} />
                   ) : (
@@ -63,10 +50,10 @@ const Sidebar = ({ items }) => {
                   >
                     <Menu items={items} />
                   </CSSTransition>
-                </>
+                </div>
               )}
               {matches.medium && (
-                <>
+                <div className={sticky ? "sidebar sidebar-sticky" : "sidebar"}>
                   {isOpen ? (
                     <CloseRounded fontSize="large" onClick={handleClickClose} />
                   ) : (
@@ -80,7 +67,7 @@ const Sidebar = ({ items }) => {
                   >
                     <Menu items={items} />
                   </CSSTransition>
-                </>
+                </div>
               )}
               {matches.large && <Menu items={items} />}
             </>
@@ -91,24 +78,11 @@ const Sidebar = ({ items }) => {
   );
 };
 
-// const Container = styled.div`
-//   position: fixed;
-//   width: 100%;
-//   top: 0;
-// `;
-
-// const Wrapper = styled.div`
-//   background-color: beige;
-//   width: 50px;
-//   height: 50px;
-//   border-top-right-radius: 20%;
-//   border-bottom-right-radius: 20%;
-// `;
-
 const SideBurger = styled(SidebarMenu)`
+  display: inline-block;
   width: 30px;
   height: 30px;
-  margin: 10px 0px 0px 10px;
+  cursor: pointer;
 `;
 
 export default Sidebar;
