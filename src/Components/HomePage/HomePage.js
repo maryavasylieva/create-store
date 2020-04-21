@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
+import _ from 'lodash';
 
 import Advantages from "./Advantages/Advantages";
 import NewProduct from "./NewProduct/NewProduct";
@@ -18,7 +19,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", _.debounce(handleScroll, 30));
     return () => window.removeEventListener("scroll", () => handleScroll);
   }, []);
 
