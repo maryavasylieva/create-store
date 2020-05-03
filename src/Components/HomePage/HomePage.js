@@ -1,16 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import _ from 'lodash';
+// import _ from "lodash";
+import { useSelector, useDispatch } from "react-redux";
 
 import Advantages from "./Advantages/Advantages";
 import NewProduct from "./NewProduct/NewProduct";
-import newProduct from "../../assets/newProduct.json";
+// import newProduct from "../../assets/newProduct.json";
 import items from "../../assets/sidebarItems.json";
 import Sidebar from "./Sidebar/Sidebar";
+import { addToCartSuccess } from "../../redux/products/productsAction";
 
 const HomePage = () => {
   const [isSticky, setSticky] = useState(false);
   const stickyRef = useRef(null);
+  const newProduct = useSelector(state => state.products.products.newProduct);
+  const dispatch = useDispatch();
 
   const handleScroll = () => {
     window.pageYOffset > stickyRef.current.getBoundingClientRect().top
@@ -19,7 +23,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", _.debounce(handleScroll, 30));
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", () => handleScroll);
   }, []);
 
@@ -28,7 +32,11 @@ const HomePage = () => {
       <Advantages />
       <Container>
         <RightSidebar>
-          <NewProduct stickyRef={stickyRef} newProduct={newProduct} />
+          <NewProduct
+            stickyRef={stickyRef}
+            newProduct={newProduct}
+            addToCartClick={id => dispatch(addToCartSuccess(id))}
+          />
         </RightSidebar>
         <LeftSidebar>
           <Sidebar items={items} sticky={isSticky} />

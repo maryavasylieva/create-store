@@ -13,8 +13,14 @@ const AsyncArtists = lazy(() => import("../Pages/Artists"));
 const AsyncDesigners = lazy(() => import("../Pages/Designers"));
 const AsyncAboutUs = lazy(() => import("../Pages/AboutUs"));
 const AsyncContacts = lazy(() => import("../Pages/Contacts"));
-const AsyncGraphicsPages = lazy(() =>import ("../Pages/Graphics.js"));
-const AsyncPaperPages  = lazy(() => import("../Pages/Paper.js"));
+const AsyncGraphicsPages = lazy(() => import("../Pages/Graphics.js"));
+const AsyncPaperPages = lazy(() => import("../Pages/Paper.js"));
+const AsyncCartPage = lazy(
+  () => import("../Pages/CartPage.js") /* webpackChunkName: "cart-page" */
+);
+const AsyncProductPage = lazy(
+  () => import("../Pages/ProductPage.js") /* webpackChunkName: "product-page" */
+);
 
 export const dropdownRoutes = [
   {
@@ -46,7 +52,7 @@ export const dropdownRoutes = [
     path: "/catalog/artreproductions",
     component: AsyncArtReproduct,
     name: "Репродукции картин"
-  },
+  }
 ];
 
 export const routes = [
@@ -90,6 +96,21 @@ export const routes = [
     path: "/personalCard",
     component: AsyncPersonalCard,
     name: "PersonalCard"
+  },
+  {
+    path: "/cart",
+    component: AsyncCartPage,
+    name: "Cart"
+  },
+  {
+    path: "/main/:id",
+    component: AsyncProductPage,
+    name: "Product Page"
+  },
+  {
+    path: "/main",
+    component: AsyncHome,
+    name: "Main"
   },
   {
     path: "/",

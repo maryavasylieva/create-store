@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { Container, Row, Col } from "reactstrap";
 
 import { ReactComponent as Like } from "../../../assets/icon/001-heart.svg";
 import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.svg";
 
-const NewProduct = ({ newProduct, stickyRef }) => {
+const NewProduct = ({ newProduct, stickyRef, addToCartClick, match }) => {
   const textSlice = title => {
     let sliceText;
     sliceText = title;
@@ -22,6 +22,7 @@ const NewProduct = ({ newProduct, stickyRef }) => {
     return sliceText;
   };
 
+
   return (
     <div ref={stickyRef}>
       <Container fluid>
@@ -29,20 +30,20 @@ const NewProduct = ({ newProduct, stickyRef }) => {
           <HeadlineSection>Новинки</HeadlineSection>
         </Row>
         <Row xs="1" sm="2" md="3" lg="5" xl="8">
-          {newProduct.map(prod => (
-            <Col key={prod.id}>
+          {newProduct.map(product => (
+            <Col key={product.id}>
               <CardItem>
-                <LinkItem to="/">
+                <LinkItem to={`${match.path}/${product.id}`}>
                   <ImgWrap>
-                    <CardImage src={prod.image} alt="new" />
+                    <CardImage src={product.image} alt="new" />
                   </ImgWrap>
-                  <CardDescr>{textSlice(prod.title)}</CardDescr>
+                  <CardDescr>{textSlice(product.title)}</CardDescr>
                 </LinkItem>
-                <CardBrandName>{prod.brandName}</CardBrandName>
-                <CardPrice>{prod.price}</CardPrice>
+                <CardBrandName>{product.brandName}</CardBrandName>
+                <CardPrice>{product.price}</CardPrice>
                 <IconWrap>
                   <IconLike />
-                  <CartButton>
+                  <CartButton onClick={addToCartClick}>
                     <IconCart />В корзину
                   </CartButton>
                 </IconWrap>
@@ -54,6 +55,8 @@ const NewProduct = ({ newProduct, stickyRef }) => {
     </div>
   );
 };
+
+
 
 const CartButton = styled.button`
   display: block;
@@ -166,4 +169,4 @@ const CardPrice = styled.p`
   font-family: ${({ theme }) => theme.fonts.notoSans}, sans-serif;
 `;
 
-export default NewProduct;
+export default withRouter(NewProduct);

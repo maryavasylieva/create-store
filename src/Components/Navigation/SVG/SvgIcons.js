@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as Loupe } from "../../../assets/icon/003-loupe.svg";
 import { ReactComponent as LikeHeart } from "../../../assets/icon/002-love-and-romance.svg";
@@ -8,9 +9,15 @@ import { ReactComponent as Cart } from "../../../assets/icon/001-shopping-cart.s
 const SvgIcon = () => {
   return (
     <>
-      <LoupeSvg />
-      <LikeHeartSvg />
-      <CartSvg />
+      <Link to="/">
+        <LoupeSvg />
+      </Link>
+      <Link to="/">
+        <LikeHeartSvg />
+      </Link>
+      <Link to="/cart">
+        <CartSvg />
+      </Link>
     </>
   );
 };

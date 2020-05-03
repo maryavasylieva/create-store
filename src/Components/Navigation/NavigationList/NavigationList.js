@@ -11,7 +11,7 @@ const NavigationList = () => {
   return (
     <NavList>
       <NavElem>
-        <NavLink to="/" exact className={css.link}>
+        <NavLink to="/main" exact className={css.link}>
           Главная
         </NavLink>
       </NavElem>

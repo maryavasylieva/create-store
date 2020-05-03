@@ -3,6 +3,7 @@ import Media from "react-media";
 import { MenuRounded, CloseRounded } from "@material-ui/icons";
 import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import SvgIcon from "./SVG/SvgIcons";
 import Logo from "../../assets/img/ArtistShopLogo.png";
@@ -27,9 +28,10 @@ const Navigation = () => {
 
   return (
     <Nav>
-      <div>
+      <Link to="/main">
         <LogoImg src={Logo} alt="logo"></LogoImg>
-      </div>
+      </Link>
+
       <div>
         <Media
           queries={{
@@ -60,15 +62,9 @@ const Navigation = () => {
               {matches.medium && (
                 <>
                   {isOpen ? (
-                    <CloseRounded
-                      fontSize="large"
-                      onClick={handleClickClose}
-                    />
+                    <CloseRounded fontSize="large" onClick={handleClickClose} />
                   ) : (
-                    <MenuRounded
-                      fontSize="large"
-                      onClick={handleClickOpen}
-                    />
+                    <MenuRounded fontSize="large" onClick={handleClickOpen} />
                   )}
                   <CSSTransition
                     in={isOpen}

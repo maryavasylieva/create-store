@@ -1,0 +1,33 @@
+.wrapp {
+    display: flex;
+  }
+
+  .image {
+    display: block;
+    width: 350px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  .text {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .data {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .itemHead {
+    font-family: "Quicksand", sans-serif;
+    color: rgb(80, 56, 138);
+    font-size: 35px;
+  }
+
+  .itemDescript {
+    font-family: "Quicksand", sans-serif;
+    line-height: 35px;
+  }
