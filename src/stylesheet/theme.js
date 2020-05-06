@@ -1,6 +1,9 @@
 const colors = {
   mainColor: "#EDEAEA",
-  white: "#ffffff"
+  white: "#ffffff",
+  softGrey: "#afacac",
+  black: "#000000",
+  whiteGrey: "#c1bdbd"
 };
 
 const fonts = {

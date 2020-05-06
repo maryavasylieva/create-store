@@ -5,48 +5,44 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import DropdownList from "../Dropdown/Dropdown";
-import css from "../Navigation.module.css";
 
 const NavigationList = () => {
   return (
     <NavList>
       <NavElem>
-        <NavLink to="/" exact className={css.link}>
+        <Link to="/" exact >
           Главная
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/catalog" className={css.link}>
+        <Link to="/catalog">
           <Dropdown overlay={DropdownList}>
             <TextDrop>
               Каталог <DownOutlined />
             </TextDrop>
           </Dropdown>
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/artists" className={css.link}>
-          Художникам
-        </NavLink>
-      </NavElem>
-      <NavElem>
-        <NavLink to="/designers" className={css.link}>
-         Дизайнерам
-        </NavLink>
-      </NavElem>
-      <NavElem>
-        <NavLink to="/aboutus" className={css.link}>
+        <Link to="/about" >
           Про нас
-        </NavLink>
+        </Link>
       </NavElem>
       <NavElem>
-        <NavLink to="/contacts" className={css.link}>
+        <Link to="/contact" >
           Контакты
-        </NavLink>
+        </Link>
       </NavElem>
     </NavList>
   );
 };
+
+const Link = styled(NavLink)`
+   color: ${({theme}) => theme.colors.black};
+   &:hover{
+     color: ${({theme}) => theme.colors.softGrey};
+   }
+`
 
 const NavList = styled.ul`
   margin: 0;
@@ -59,7 +55,7 @@ const NavList = styled.ul`
 
 const TextDrop = styled.p`
   margin: 0;
-  @media screen and(min-width: 1024px) {
+  @media screen and(min-width: 1200px) {
     padding-bottom: 20px;
   }
 `;
@@ -70,7 +66,7 @@ const NavElem = styled.li`
   padding: 40px 0px 40px 0px;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: ${({theme}) => theme.fonts.montserrat};
   margin-right: 20px;
 `;
 
